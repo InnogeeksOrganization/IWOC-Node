@@ -1,0 +1,41 @@
+{
+  "name": "iwoc",
+  "version": "1",
+  "description": "Frontend and Backend of IWOC Portal",
+  "main": "index.js",
+  "directories": {
+    "example": "root"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "devStart": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InnogeeksOrganization/IWOC-Node.git"
+  },
+  "keywords": [],
+  "author": "Ayush Dubey <dubeyayush02@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/InnogeeksOrganization/IWOC-Node/issues"
+  },
+  "homepage": "http://innogeeks.in",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.8.1",
+    "mongoose-findorcreate": "^3.0.0",
+    "passport": "^0.6.0",
+    "passport-github2": "^0.1.12",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
