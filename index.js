@@ -25,7 +25,7 @@ const sessionStore = MongoStore.create({
 // Compulsory Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static('public'));
+app.use('/public',express.static(__dirname + '/public'));
 
 
 
