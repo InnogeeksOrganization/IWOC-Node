@@ -25,7 +25,7 @@ const sessionStore = MongoStore.create({
 // Compulsory Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use('/public',express.static(__dirname + '/public'));
+app.use('/public',express.static(__dirname + '/public'));    //If static files does not load try: app.use(express.static('public'));
 
 
 
