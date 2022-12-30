@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const passport = require("passport");
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
 require('dotenv').config();
@@ -9,16 +10,14 @@ const routes = require('./routes');
 
 
 const app = express();
-
-// Connection to MongoDB (Single-Default)
 mongoose.connect(process.env.DB_STRING, () => { console.log("Connected to MongoDB.") });
 
 
 // Session Store for storing session data by express-sessions
 const sessionStore = MongoStore.create({
-    mongoUrl: process.env.DB_STRING,
-    collection: 'sessions'
-})
+  mongoUrl: process.env.DB_STRING,
+  collection: "sessions",
+});
 
 
 
@@ -26,6 +25,8 @@ const sessionStore = MongoStore.create({
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/public',express.static(__dirname + '/public'));    //If static files does not load try: app.use(express.static('public'));
+
+
 
 
 
@@ -42,6 +43,9 @@ app.use(session({
     }
 }))
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 // Rendering Engine Middleware (ejs)
 app.set('view engine', 'ejs');
@@ -51,4 +55,10 @@ app.use(routes);
 
 
 // Port for running instance
-app.listen(6969);
+app.listen(process.env.PORT || 5000, (err) => {
+  if(err){
+    console.log(err);
+  }else{
+    console.log("app is listening to port 5000");
+  }
+});
