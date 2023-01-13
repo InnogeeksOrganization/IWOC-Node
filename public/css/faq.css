@@ -1,0 +1,85 @@
+/* ======================== */
+/* Global Styles            */
+/* ======================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 50em;
+    padding: min(2rem, 4.5vmax);
+}
+
+.flow > * + * { /* Adds space to all direct children except the 1st */
+    margin-top: 0.75rem;
+}
+
+.title {
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    margin-top: 0;
+    color: #ffffff;
+}
+
+/* ======================== */
+/* Accordion Styles         */
+/* ======================== */
+
+.accordion {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* Accordion Trigger */
+.accordion__item--trigger {
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.125rem;
+    margin: 0;
+    padding: 0.75rem 2rem;
+    background-color: transparent;
+    /* box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1),
+                0 2px 3px rgba(0, 0, 0, 0.1),
+                0 3px 5px rgba(0, 0, 0, 0.1); */
+
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+    .accordion__item--trigger::after {
+        content: '+';
+        font-weight: 700;
+        font-size: 1.5rem;
+        display: block;
+        /* margin-left: 0.75rem; */
+    }
+    .accordion__item--trigger[aria-expanded="true"]::after {
+        content: '-';
+    }
+
+/* Accordion Panel */
+.accordion__item--panel {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    background: linear-gradient(to right, #c5dbf0 , rgb(135, 178, 206));
+    transition: height 400ms ease-in-out, opacity 350ms linear;
+    display: flex;
+    color: black;
+}
+    .accordion__item--panel > p {
+        margin: 0;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+.accordion__item--trigger[aria-expanded="true"] + .accordion__item--panel {
+    height: 4.6875rem;
+    opacity: 1;
+}

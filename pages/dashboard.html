@@ -286,9 +286,9 @@
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+              <a href="/logout" class="nav-link text-body font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">Log in</span>
+                <span class="d-sm-inline d-none">Log out</span>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -400,7 +400,7 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">Score</p>
                     <h5 class="font-weight-bolder mb-0">
-                      xyz
+                      <%= user.score %>
                       <span class="text-success text-sm font-weight-bolder">+55%</span>
                     </h5>
                   </div>
@@ -422,7 +422,7 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-capitalize font-weight-bold">contribution</p>
                     <h5 class="font-weight-bolder mb-0">
-                      2,300
+                      <%= user.scoresRecord.length %>
                       <span class="text-success text-sm font-weight-bolder">+3%</span>
                     </h5>
                   </div>
