@@ -30,7 +30,9 @@ async function authManager(req, res, next) {
 
 
 
-router.get("/", authManager);
+router.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../pages/landing.html"));
+});
 
 router.get(
   "/dashboard",

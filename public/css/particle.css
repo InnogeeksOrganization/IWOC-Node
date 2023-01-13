@@ -1,0 +1,35 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background-color: #0a0d18;
+  /* background-color: #000000; */
+  position: relative;
+  font-family: Arial;
+}
+
+.content {
+  max-width: 70%;
+  position: relative;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 1000;
+  margin: auto;
+  margin-top: 70%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}

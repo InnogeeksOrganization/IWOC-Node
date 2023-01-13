@@ -1,0 +1,58 @@
+:root {
+    --smaller: .75;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    color: rgb(255, 255, 255);
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h1 {
+    font-weight: normal;
+    letter-spacing: .125rem;
+    font-size: 2rem;
+    /* text-transform: uppercase; */
+  }
+  
+.timerli {
+    display: inline-block;
+    font-size: 0.8rem;
+    list-style-type: none;
+    padding: 1em;
+  }
+  
+.timerli span {
+    display: block;
+    font-size: 1rem;
+  }
+
+  @media all and (max-width: 768px) {
+    h1 {
+      font-size: calc(1.5rem * var(--smaller));
+    }
+    
+    li {
+      font-size: calc(1.125rem * var(--smaller));
+    }
+    
+    li span {
+      font-size: calc(3.375rem * var(--smaller));
+    }
+
+  }
+
+  @media only screen and (min-width: 720px){
+    .timerli{
+        font-size: 1rem;
+    }
+    .timerli span{
+        font-size: 2rem;
+    }
+  }
