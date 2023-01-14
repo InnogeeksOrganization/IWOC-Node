@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="../public/css/timer.css" />
     <link rel="stylesheet" href="../public/css/speakerCard.css" />
     <link rel="stylesheet" href="../public/css/buttonDiscord.css" />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
   </head>
   <body>
     <div id="particles-js"></div>
@@ -194,72 +198,74 @@
     </div>
 
     <!-- speakers -->
-    <h1 class="title" style="margin-top: 20%; margin-bottom: 3%" id="speaker">
-      Speakers
-    </h1>
-    <div class="speakercard">
-      <div class="card">
-        <div class="card2">
-          <img
-            src="../public/img/speaker/shashank srivastava.jpeg"
-            class="speakerImage"
-          />
-          <p class="speakerName">Shashank Srivastava</p>
-          <p class="speakerProfile">Mobile Apps, India Business @Google</p>
+    <h1 class="title" id="speaker" style="margin-top: 20%">Speakers</h1>
+    <div class="speakerbody">
+    <div class="blog-slider">
+      <div class="blog-slider__wrp swiper-wrapper">
+        <div class="blog-slider__item swiper-slide">
+          <div class="blog-slider__img">
+            
+            <img src="../public/img/speaker/shashank srivastava.jpeg" alt="">
+          </div>
+          <div class="blog-slider__content">
+            <div class="blog-slider__title">Shashank Srivastava</div>
+            <div class="blog-slider__text">Mobile Apps, India Business @Google</div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card2">
-          <img
-            src="../public/img/speaker/vanshika garg.jpeg"
-            class="speakerImage"
-          />
-          <p class="speakerName">Vanshika Garg</p>
-          <p class="speakerProfile">
-            Fractal Analytics | vGHC'21, GHCI & EATON Scholar
-          </p>
+        <div class="blog-slider__item swiper-slide">
+          <div class="blog-slider__img">
+            <img src="../public/img/speaker/vanshika garg.jpeg" alt="">
+          </div>
+          <div class="blog-slider__content">
+            <div class="blog-slider__title">Vanshika Garg </div>
+            <div class="blog-slider__text">Fractal Analytics | vGHC'21, GHCI & EATON Scholar</div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card2">
-          <img
-            src="../public/img/speaker/vinit shahdeo.jpeg"
-            class="speakerImage"
-          />
-          <p class="speakerName">Vinit Shahdeo</p>
-          <p class="speakerProfile">
-            SDE 2 @ Postman | Github Star | GSoC Mentor
-          </p>
+        
+        <div class="blog-slider__item swiper-slide">
+          <div class="blog-slider__img">
+            <img src="../public/img/speaker/vinit shahdeo.jpeg" alt="">
+          </div>
+          <div class="blog-slider__content">
+            <div class="blog-slider__title">Vinit Shahdeo</div>
+            <div class="blog-slider__text">Software Engineer II at Postman | GitHub Star | GSoC Mentor
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card2">
-          <img
-            src="../public/img/speaker/shaksham saini.jpeg"
-            class="speakerImage"
-          />
-          <p class="speakerName">Shaksham Saini</p>
-          <p class="speakerProfile">CTO & Co-founder @ Vorphy India</p>
-        </div>
-      </div>
-    </div>
 
-    <!-- Sponsors -->
-    <div id="sponsors" style="text-align: center; margin-top: 20%">
-      <h1 class="title" style="margin-top: 8%; margin-bottom: 2%">Sponsors</h1>
-      <div style="color: white; text-align: center; margin: 0 5% 5% 5%">
-        <i
-          >Sponsors of our event will be anounced soon. Stay tuned for more
-          exciting updates!</i
-        >
+        <div class="blog-slider__item swiper-slide">
+          <div class="blog-slider__img">
+            <img src="../public/img/speaker/shaksham saini.jpeg" alt="">
+          </div>
+          <div class="blog-slider__content">
+            <div class="blog-slider__title">SAKSHAM SAINI</div>
+            <div class="blog-slider__text">CTO & Co-founder @ Vorphy India</div>
+          </div>
+        </div>
+        
       </div>
-      <button
+      <div class="blog-slider__pagination"></div>
+    </div>
+  </div>
+
+
+
+  <!-- sponsors -->
+  <div id="sponsors" style="margin-top: 20%; text-align: center;">
+    <h1 class="title" style="margin-top: 8%; margin-bottom: 2%">Sponsors</h1>
+    <div style="color: white; text-align: center; margin: 0 5% 0 5%">
+      <i
+        >We will shortly announce our sponsors. Stay tuned......</i
+      >
+    </div>
+    <button
         class="button"
         onclick="window.location.href = 'https://www.youtube.com/'"
+        style="margin-top: 5%;"
       >
         Sponsor Us
       </button>
-    </div>
+  </div>
 
     <!-- FAQ -->
     <div class="accordion container flow" id="faq" style="margin-top: 20%">
@@ -402,9 +408,11 @@
       >
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="../public/js/particles.js"></script>
     <script src="../public/js/particle.js"></script>
     <script src="../public/js/faq.js"></script>
     <script src="../public/js/timer.js"></script>
+    <script src="../public/js/speaker.js"></script>
   </body>
 </html>
