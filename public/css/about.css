@@ -16,6 +16,8 @@
 .aboutblocks{
     display: flex;
     flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
     /* margin-left: 5%; */
 }
 
@@ -69,11 +71,21 @@
     }
 
     .aboutnumber{
-        font-size: 4.5rem;
+        font-size: 2.65rem;
     }
 
     .abouttext{
-        font-size: 2rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (min-width: 1120px){
+    .aboutnumber{
+        font-size: 4rem;
+    }
+
+    .abouttext{
+        font-size: 1.5rem;
     }
 }
 
