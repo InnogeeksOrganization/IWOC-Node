@@ -68,6 +68,7 @@
     opacity: 0;
     overflow: hidden;
     background: linear-gradient(to right, #c5dbf0 , rgb(135, 178, 206));
+    border-radius: 10px;
     transition: height 400ms ease-in-out, opacity 350ms linear;
     display: flex;
     color: black;

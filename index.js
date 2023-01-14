@@ -59,6 +59,6 @@ app.listen(process.env.PORT || 5000, (err) => {
   if(err){
     console.log(err);
   }else{
-    console.log("app is listening to port 6000");
+    console.log("app is listening to port 5000");
   }
 });

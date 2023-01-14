@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Sofia+Sans+Semi+Condensed:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../public/css/particle.css">
-    <link rel="stylesheet" href="../public/css/navbar.css">
-    <link rel="stylesheet" href="../public/css/logo.css">
-    <link rel="stylesheet" href="../public/css/timeline.css">
-    <link rel="stylesheet" href="../public/css/about.css">
-    <link rel="stylesheet" href="../public/css/faq.css">
-    <link rel="stylesheet" href="../public/css/footer.css">
-    <link rel="stylesheet" href="../public/css/timer.css">
-    
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IWoC</title>
+    <link rel="icon" type="image/x-icon" href="../public/img/iwoc_trans.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Sofia+Sans+Semi+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../public/css/particle.css" />
+    <link rel="stylesheet" href="../public/css/navbar.css" />
+    <link rel="stylesheet" href="../public/css/logo.css" />
+    <link rel="stylesheet" href="../public/css/timeline.css" />
+    <link rel="stylesheet" href="../public/css/about.css" />
+    <link rel="stylesheet" href="../public/css/faq.css" />
+    <link rel="stylesheet" href="../public/css/footer.css" />
+    <link rel="stylesheet" href="../public/css/timer.css" />
+    <link rel="stylesheet" href="../public/css/speakerCard.css" />
+    <link rel="stylesheet" href="../public/css/buttonDiscord.css" />
+  </head>
+  <body>
     <div id="particles-js"></div>
     <nav>
-    <div class="nav">
-        <input type="checkbox" id="nav-check">
+      <div class="nav">
+        <input type="checkbox" id="nav-check" />
         <div class="nav-header">
-          <div class="nav-title">
-            IWOC
-          </div>
+          <img src="../public/img/iwoc_final.png" class="navimg" />
+          <div class="nav-title"></div>
         </div>
         <div class="nav-btn">
           <label for="nav-check">
@@ -33,199 +39,372 @@
             <span></span>
           </label>
         </div>
-        
+
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#timeline">Timeline</a>
+          <a href="#prizes">Prizes</a>
+          <a href="#speaker">Speakers</a>
+          <a href="#sponsors">Sponsors</a>
           <a href="#faq">FAQ's</a>
-          <a href="/login">Sign Up</a>
+          <!-- <a href="/login">Sign Up</a> -->
         </div>
       </div>
     </nav>
-      <div class="logo" id="logo">
-        <img src="../public/img/Blue and Black Minimal Code House Logo (1000 × 500px) (1).png" class="mainlogo">
-        <div class="container">
-            <h1 id="headline">Registration Begins in</h1>
-            <div id="countdown">
-              <ul>
-                <li class="timerli"><span id="days"></span>Days</li>
-                <li class="timerli"><span id="hours"></span>Hours</li>
-                <li class="timerli"><span id="minutes"></span>Minutes</li>
-                <li class="timerli"><span id="seconds"></span>Seconds</li>
-              </ul>
-            </div>
+    <div class="logo" id="logo">
+      <img src="../public/img/iwoc_logo.png" class="mainlogo" />
+      <div class="container">
+        <h1 id="headline" style="font-weight: bolder">Registration opens in</h1>
+        <div id="countdown">
+          <ul>
+            <li class="timerli"><span id="days"></span>Days</li>
+            <li class="timerli"><span id="hours"></span>Hours</li>
+            <li class="timerli"><span id="minutes"></span>Minutes</li>
+            <li class="timerli"><span id="seconds"></span>Seconds</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="discordbutton">
+      <button
+        class="button"
+        onclick="window.location.href = 'https://www.youtube.com/'"
+      >
+        Join Discord
+      </button>
+      <button
+        class="button"
+        onclick="window.location.href = 'https://www.youtube.com/'"
+      >
+        Code of conduct
+      </button>
+    </div>
+
+    <div class="about" id="about">
+      <div class="aboutsection">
+        <p class="abouttitle" style="color: black">
+          About <strong>IWOC</strong>
+        </p>
+        <p>
+          Step into the world of open-source development and elevate your skills
+          to new heights with the <b>Innogeeks Winter of Code</b>. This online
+          program is specially crafted to introduce new contributors to the
+          fascinating world of open-source software development. Join us for a
+          month-long event that will immerse you in a collaborative and
+          challenging environment, where you will have the opportunity to
+          contribute to a variety of projects hand-picked by our team. Showcase
+          your talents and be rewarded with exclusive swags and goodies for
+          being one of the top performers. Be a part of our mission to foster an
+          open-source culture at KIET Group of Institutions and embark on a
+          thrilling journey of personal and professional growth.
+        </p>
+      </div>
+      <div class="aboutblocks">
+        <div class="aboutrow">
+          <div class="aboutelement">
+            <p class="aboutnumber">700+</p>
+            <p class="abouttext">Mentors</p>
           </div>
-      </div>
-
-
-      <div class="about" id="about">
-        <div class="aboutsection">
-            <p class="abouttitle" style="color: black; ">About <strong>IWOC</strong></p>
-            <p>Innogeeks Winter of Code is an online program focused on bringing new contributors into open source software development.<br>
-                This event is aimed to develop an open-source culture in KIET Group of Institutions.<br>
-                It will be a month-long online event, in which the participants can contribute to various projects shortlisted by us, wherein the top performers will be awarded with swags and goodies.</p>
+          <div class="aboutelement">
+            <p class="aboutnumber">800+</p>
+            <p class="abouttext">Participants</p>
+          </div>
         </div>
-        <div class="aboutblocks">
-            <div class="aboutrow">
-                <div class="aboutelement">
-                    <p class="aboutnumber">700+</p>
-                    <p class="abouttext">Mentors</p>
-                </div>
-                <div class="aboutelement">
-                    <p class="aboutnumber">800+</p>
-                    <p class="abouttext">Participants</p> 
-                </div>
-            </div>
-            <div class="aboutrow">
-                <div class="aboutelement">
-                    <p class="aboutnumber">100+</p>
-                    <p class="abouttext">Projects</p> 
-                </div>
-                <div class="aboutelement">
-                    <p class="aboutnumber">9000K+</p>
-                    <p class="abouttext">Lines of Code</p>
-                </div>
-            </div>
+        <div class="aboutrow">
+          <div class="aboutelement">
+            <p class="aboutnumber">100+</p>
+            <p class="abouttext">Projects</p>
+          </div>
+          <div class="aboutelement">
+            <p class="aboutnumber">9000K+</p>
+            <p class="abouttext">Lines of Code</p>
+          </div>
         </div>
       </div>
+    </div>
 
+    <!-- timeline -->
+    <h1 class="title" id="timeline" style="margin-top: 15%">Timeline</h1>
+    <section id="cd-timeline" class="cd-container">
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie"></div>
 
+        <div class="cd-timeline-content">
+          <h2>January 20th, 2023</h2>
+          <p>
+            Registration opens, allowing potential contributors to sign up for
+            the event
+          </p>
+        </div>
+      </div>
 
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-picture"></div>
 
+        <div class="cd-timeline-content">
+          <h2>Febuary 1st, 2023</h2>
+          <p>
+            Contribution begins, and contributors may begin contributing to the
+            projects listed.
+          </p>
+        </div>
+      </div>
 
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-location"></div>
 
+        <div class="cd-timeline-content">
+          <h2>Febuary 4th and 11th, 2023</h2>
+          <p>
+            In-person sessions led by industry experts on various technologies
+          </p>
+        </div>
+      </div>
 
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-location"></div>
 
+        <div class="cd-timeline-content">
+          <h2>Febuary 5, 12, 19 & 26th, 2023</h2>
+          <p>Virtual sessions conducted by expert professionals</p>
+        </div>
+      </div>
 
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie"></div>
 
-      <!-- timeline -->
-      <h1 class="title" id="timeline">Timeline</h1>
-      <section id="cd-timeline" class="cd-container">
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-movie">
-			</div>
+        <div class="cd-timeline-content">
+          <h2>March 1st, 2023</h2>
+          <p>Event closing ceremony, including the announcement of results</p>
+        </div>
+      </div>
+    </section>
 
-			<div class="cd-timeline-content">
-				<h2>Title of section 2</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
+    <!-- prizes -->
+    <div id="prizes" style="margin-top: 20%">
+      <h1 class="title" style="margin-top: 8%; margin-bottom: 2%">Prizes</h1>
+      <div style="color: white; text-align: center; margin: 0 5% 0 5%">
+        <i
+          >We'll shortly reveal a variety of rewards and privileges that are
+          waiting for the top coders in the Innogeeks Winter of Code. Till then
+          stay tuned...</i
+        >
+      </div>
+    </div>
 
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-picture">
-			</div> <!-- cd-timeline-img -->
+    <!-- speakers -->
+    <h1 class="title" style="margin-top: 20%; margin-bottom: 3%" id="speaker">
+      Speakers
+    </h1>
+    <div class="speakercard">
+      <div class="card">
+        <div class="card2">
+          <img
+            src="../public/img/speaker/shashank srivastava.jpeg"
+            class="speakerImage"
+          />
+          <p class="speakerName">Shashank Srivastava</p>
+          <p class="speakerProfile">Mobile Apps, India Business @Google</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card2">
+          <img
+            src="../public/img/speaker/vanshika garg.jpeg"
+            class="speakerImage"
+          />
+          <p class="speakerName">Vanshika Garg</p>
+          <p class="speakerProfile">
+            Fractal Analytics | vGHC'21, GHCI & EATON Scholar
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card2">
+          <img
+            src="../public/img/speaker/vinit shahdeo.jpeg"
+            class="speakerImage"
+          />
+          <p class="speakerName">Vinit Shahdeo</p>
+          <p class="speakerProfile">
+            SDE 2 @ Postman | Github Star | GSoC Mentor
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card2">
+          <img
+            src="../public/img/speaker/shaksham saini.jpeg"
+            class="speakerImage"
+          />
+          <p class="speakerName">Shaksham Saini</p>
+          <p class="speakerProfile">CTO & Co-founder @ Vorphy India</p>
+        </div>
+      </div>
+    </div>
 
-			<div class="cd-timeline-content">
-				<h2>Title of section 3</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Title of section 4</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-			</div> 
-
-			<div class="cd-timeline-content">
-				<h2>Title of section 5</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-movie">
-			</div> <!-- cd-timeline-img -->
-
-			<div class="cd-timeline-content">
-				<h2>Final Section</h2>
-				<p>This is the content of the last section</p>
-			</div> <!-- cd-timeline-content -->
-		</div> <!-- cd-timeline-block -->
-	</section> <!-- cd-timeline -->
-
-
-
-
+    <!-- Sponsors -->
+    <div id="sponsors" style="text-align: center; margin-top: 20%">
+      <h1 class="title" style="margin-top: 8%; margin-bottom: 2%">Sponsors</h1>
+      <div style="color: white; text-align: center; margin: 0 5% 5% 5%">
+        <i
+          >Sponsors of our event will be anounced soon. Stay tuned for more
+          exciting updates!</i
+        >
+      </div>
+      <button
+        class="button"
+        onclick="window.location.href = 'https://www.youtube.com/'"
+      >
+        Sponsor Us
+      </button>
+    </div>
 
     <!-- FAQ -->
-    <div class="accordion container flow" id="faq">
-    
-        <h1 class="title">Frequently asked questions</h1>
-    
-        <div class="accordion__item">
-            <h2 id="accordion__trigger-1" class="accordion__item--trigger" aria-expanded="false" aria-controls="accordion__panel-1">
-                How many team members can I invite?
-            </h2>
-            <div id="accordion__panel-1" class="accordion__item--panel" role="region" aria-labelledby="accordion__trigger-1">
-                <p>Students of KIET Group of Institutions (we plan to extend next edition onwards).</p>
-            </div>
-        </div>
-    
-        <div class="accordion__item">
-            <h2 id="accordion__trigger-2" class="accordion__item--trigger" aria-expanded="false" aria-controls="accordion__panel-2">
-                Do i need to be good in development for taking part?
-            </h2>
-            <div id="accordion__panel-2" class="accordion__item--panel" role="region" aria-labelledby="accordion__trigger-2">
-                <p>No! You can be a beginner and still contribute, we're there to help you out.</p>
-            </div>
-        </div>
-    
-        <div class="accordion__item">
-            <h2 id="accordion__trigger-2" class="accordion__item--trigger" aria-expanded="false" aria-controls="accordion__panel-2">
-                How to contribute?
-            </h2>
-            <div id="accordion__panel-2" class="accordion__item--panel" role="region" aria-labelledby="accordion__trigger-2">
-                <p>The project links are availabe on the site. One can use their github id for making the contributions</p>
-            </div>
-        </div>
-    
-        <div class="accordion__item">
-            <h2 id="accordion__trigger-3" class="accordion__item--trigger" aria-expanded="false" aria-controls="accordion__panel-3">
-                Is the event online/offline?
-            </h2>
-            <div id="accordion__panel-3" class="accordion__item--panel" role="region" aria-labelledby="accordion__trigger-3">
-                <p>Online.</p>
-            </div>
-        </div>
+    <div class="accordion container flow" id="faq" style="margin-top: 20%">
+      <h1 class="title">Frequently asked questions</h1>
 
-        <div class="accordion__item">
-            <h2 id="accordion__trigger-3" class="accordion__item--trigger" aria-expanded="false" aria-controls="accordion__panel-3">
-                Can I participate in IWoc as both a maintainer and a IWoc Contributor?
-            </h2>
-            <div id="accordion__panel-3" class="accordion__item--panel" role="region" aria-labelledby="accordion__trigger-3">
-                <p>A maintainer is expected have a understanding of GitHub and Git Version Control System.</p>
-            </div>
+      <div class="accordion__item">
+        <h2
+          id="accordion__trigger-1"
+          class="accordion__item--trigger"
+          aria-expanded="false"
+          aria-controls="accordion__panel-1"
+        >
+          How many team members can I invite?
+        </h2>
+        <div
+          id="accordion__panel-1"
+          class="accordion__item--panel"
+          role="region"
+          aria-labelledby="accordion__trigger-1"
+        >
+          <p>
+            Students of KIET Group of Institutions (we plan to extend next
+            edition onwards).
+          </p>
         </div>
+      </div>
 
-        <div class="accordion__item">
-            <h2 id="accordion__trigger-3" class="accordion__item--trigger" aria-expanded="false" aria-controls="accordion__panel-3">
-                Are participants from other colleges allowed to participate in IWoC 2023?
-            </h2>
-            <div id="accordion__panel-3" class="accordion__item--panel" role="region" aria-labelledby="accordion__trigger-3">
-                <p>No</p>
-            </div>
+      <div class="accordion__item">
+        <h2
+          id="accordion__trigger-2"
+          class="accordion__item--trigger"
+          aria-expanded="false"
+          aria-controls="accordion__panel-2"
+        >
+          Do i need to be good in development for taking part?
+        </h2>
+        <div
+          id="accordion__panel-2"
+          class="accordion__item--panel"
+          role="region"
+          aria-labelledby="accordion__trigger-2"
+        >
+          <p>
+            No! You can be a beginner and still contribute, we're there to help
+            you out.
+          </p>
         </div>
-    
+      </div>
+
+      <div class="accordion__item">
+        <h2
+          id="accordion__trigger-2"
+          class="accordion__item--trigger"
+          aria-expanded="false"
+          aria-controls="accordion__panel-2"
+        >
+          How to contribute?
+        </h2>
+        <div
+          id="accordion__panel-2"
+          class="accordion__item--panel"
+          role="region"
+          aria-labelledby="accordion__trigger-2"
+        >
+          <p>
+            The project links are availabe on the site. One can use their github
+            id for making the contributions
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <h2
+          id="accordion__trigger-3"
+          class="accordion__item--trigger"
+          aria-expanded="false"
+          aria-controls="accordion__panel-3"
+        >
+          Is the event online/offline?
+        </h2>
+        <div
+          id="accordion__panel-3"
+          class="accordion__item--panel"
+          role="region"
+          aria-labelledby="accordion__trigger-3"
+        >
+          <p>Online.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <h2
+          id="accordion__trigger-3"
+          class="accordion__item--trigger"
+          aria-expanded="false"
+          aria-controls="accordion__panel-3"
+        >
+          Can I participate in IWoc as both a maintainer and a IWoc Contributor?
+        </h2>
+        <div
+          id="accordion__panel-3"
+          class="accordion__item--panel"
+          role="region"
+          aria-labelledby="accordion__trigger-3"
+        >
+          <p>
+            A maintainer is expected have a understanding of GitHub and Git
+            Version Control System.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion__item">
+        <h2
+          id="accordion__trigger-3"
+          class="accordion__item--trigger"
+          aria-expanded="false"
+          aria-controls="accordion__panel-3"
+        >
+          Are participants from other colleges allowed to participate in IWoC
+          2023?
+        </h2>
+        <div
+          id="accordion__panel-3"
+          class="accordion__item--panel"
+          role="region"
+          aria-labelledby="accordion__trigger-3"
+        >
+          <p>No</p>
+        </div>
+      </div>
     </div>
 
     <div class="footer">
-        Made with ❤️ by <a href="https://innogeeks.in/" style="text-decoration: none; color: white;">Team Innogeeks</a>
+      Made with ❤️ by
+      <a
+        href="https://innogeeks.in/"
+        style="text-decoration: none; color: white"
+        >Team Innogeeks</a
+      >
     </div>
-      
 
-      
-      <script src="../public/js/particles.js"></script>
-      <script src="../public/js/particle.js"></script>
-      <script src="../public/js/faq.js"></script>
-      <script src="../public/js/timer.js"></script>
-</body>
+    <script src="../public/js/particles.js"></script>
+    <script src="../public/js/particle.js"></script>
+    <script src="../public/js/faq.js"></script>
+    <script src="../public/js/timer.js"></script>
+  </body>
 </html>
