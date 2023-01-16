@@ -89,11 +89,12 @@ Main components
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  background: linear-gradient(to right, #c5dbf0, rgb(135, 178, 206));
   box-shadow: 0 0 0 4px #0367fd, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
 
 .cd-timeline-img {
-  background: #0e3775;
+  /* background: #0e3775; */
 }
 
 @media only screen and (min-width: 1170px) {
@@ -109,9 +110,33 @@ Main components
   position: relative;
   margin-left: 60px;
   margin-right: 30px;
-  background: linear-gradient(to right, #c5dbf0 , rgb(135, 178, 206));
+  /* background: linear-gradient(to right, #c5dbf0 , rgb(135, 178, 206)); */
   border-radius: 2px;
   padding: 1em;
+  /* background: linear-gradient(to right, #c5dbf0 , rgb(135, 178, 206)); */
+  /* glassmorphism css added */
+      /* From https://css.glass */
+/* background: rgba(255, 255, 255, 0.14);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.1px);
+-webkit-backdrop-filter: blur(3.1px);
+border: 1px solid rgba(21, 141, 211, 09);
+  border-radius: 10px;
+  padding: 1em;
+   */
+   /* From https://css.glass */
+/* background: rgba(255, 255, 255, 0.2); */
+background: transparent;
+border-radius: 4px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+border: 1px solid rgba(255, 255, 255, 0.744);
+  /* glassmorphism css added */
+  background: linear-gradient(to right, #c5dbf0, rgb(135, 178, 206));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
 }
 .cd-timeline-content .timeline-content-info {
   background: rgb(12, 128, 136);
