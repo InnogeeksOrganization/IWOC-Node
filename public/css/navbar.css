@@ -24,7 +24,7 @@ border: 1px solid rgba(255, 255, 255, 0.39);
   .nav > .nav-header > .nav-title {
     display: inline-block;
     font-size: 2rem;
-    color: rgb(0, 0, 0);
+    /* color: rgb(0, 0, 0); */
     padding: 15px 10px 10px 0px;
   }
   
@@ -46,11 +46,14 @@ border: 1px solid rgba(255, 255, 255, 0.39);
   }
   
   .nav > .nav-links > a:hover {
-    background-color: rgb(24, 142, 220);
-    box-shadow: rgb(24, 174, 220) 0px 7px 29px 0px;
-    color: #e7e3e3;
+    /* hover removed */
+    /* background-color: rgb(24, 142, 220);
+    box-shadow: rgb(24, 174, 220) 0px 7px 29px 0px; */
+    /* hover removed */
+    color: #f3f2f2;
   }
   
+ 
   .nav > #nav-check {
     display: none;
   }
