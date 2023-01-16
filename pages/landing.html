@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Sofia+Sans+Semi+Condensed:wght@300&display=swap"
       rel="stylesheet"
     />
+  
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <!-- AOS CDN -->
+ 
     <link rel="stylesheet" href="../public/css/particle.css" />
     <link rel="stylesheet" href="../public/css/navbar.css" />
     <link rel="stylesheet" href="../public/css/logo.css" />
@@ -22,6 +26,12 @@
     <link rel="stylesheet" href="../public/css/timer.css" />
     <link rel="stylesheet" href="../public/css/speakerCard.css" />
     <link rel="stylesheet" href="../public/css/buttonDiscord.css" />
+    <!-- <link rel="stylesheet" href="../public/css/loadercounter.css" /> -->
+    <!-- <link rel="stylesheet" href="../public/css/scrollbar.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <div id="particles-js"></div>
@@ -50,9 +60,10 @@
           <!-- <a href="/login">Sign Up</a> -->
         </div>
       </div>
-    </nav>
+    </nav><div data-aos="zoom-in">
     <div class="logo" id="logo">
-      <img src="../public/img/iwoc_logo.png" class="mainlogo" />
+      <img src="../public/img/iwoc_logo.png" class="mainlogo" /></div>
+      </div>
       <div class="container">
         <h1 id="headline" style="font-weight: bolder">Registration opens in</h1>
         <div id="countdown">
@@ -124,24 +135,32 @@
       </div>
     </div>
 
+    <!-- scrollbar -->
+    <!-- <div class="scrollbar" id="style-5">
+      <div class="force-overflow"></div>
+    </div> -->
+
     <!-- timeline -->
     <h1 class="title" id="timeline" style="margin-top: 15%">Timeline</h1>
     <section id="cd-timeline" class="cd-container">
       <div class="cd-timeline-block">
+        
         <div class="cd-timeline-img cd-movie"></div>
+        <div data-aos="fade-right">
 
         <div class="cd-timeline-content">
-          <h2>January 20th, 2023</h2>
+           <h2>January 20th, 2023</h2>
           <p>
             Registration opens, allowing potential contributors to sign up for
             the event
           </p>
         </div>
       </div>
+    </div>
 
       <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-picture"></div>
-
+        <div data-aos="fade-left">
         <div class="cd-timeline-content">
           <h2>Febuary 1st, 2023</h2>
           <p>
@@ -149,34 +168,38 @@
             projects listed.
           </p>
         </div>
+        </div>
       </div>
 
       <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-location"></div>
-
+        <div data-aos="fade-right">
         <div class="cd-timeline-content">
           <h2>Febuary 4th and 11th, 2023</h2>
           <p>
             In-person sessions led by industry experts on various technologies
           </p>
         </div>
+        </div>
       </div>
 
       <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-location"></div>
-
+        <div data-aos="fade-left">
         <div class="cd-timeline-content">
           <h2>Febuary 5, 12, 19 & 26th, 2023</h2>
           <p>Virtual sessions conducted by expert professionals</p>
+        </div>
         </div>
       </div>
 
       <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-movie"></div>
-
+        <div data-aos="fade-right">
         <div class="cd-timeline-content">
           <h2>March 1st, 2023</h2>
           <p>Event closing ceremony, including the announcement of results</p>
+        </div>
         </div>
       </div>
     </section>
@@ -192,70 +215,76 @@
         >
       </div>
     </div>
-
+ 
     <!-- speakers -->
-    <h1 class="title" style="margin-top: 20%; margin-bottom: 3%" id="speaker">
-      Speakers
-    </h1>
-    <div class="speakercard">
-      <div class="card">
-        <div class="card2">
-          <img
-            src="../public/img/speaker/shashank srivastava.jpeg"
-            class="speakerImage"
-          />
-          <p class="speakerName">Shashank Srivastava</p>
-          <p class="speakerProfile">Mobile Apps, India Business @Google</p>
+    <h1 class="title" id="speaker" style="margin-top: 20%">Speakers</h1>
+    <div class="speakerbody">
+      <div class="blog-slider">
+        <div class="blog-slider__wrp swiper-wrapper">
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <img
+                src="../public/img/speaker/shashank srivastava.jpeg"
+                alt=""
+              />
+            </div>
+            <div class="blog-slider__content">
+              <div class="blog-slider__title">Shashank Srivastava</div>
+              <div class="blog-slider__text">
+                Mobile Apps, India Business @Google
+              </div>
+            </div>
+          </div>
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <img src="../public/img/speaker/vanshika garg.jpeg" alt="" />
+            </div>
+            <div class="blog-slider__content">
+              <div class="blog-slider__title">Vanshika Garg</div>
+              <div class="blog-slider__text">
+                Fractal Analytics | vGHC'21, GHCI & EATON Scholar
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <img src="../public/img/speaker/vinit shahdeo.jpeg" alt="" />
+            </div>
+            <div class="blog-slider__content">
+              <div class="blog-slider__title">Vinit Shahdeo</div>
+              <div class="blog-slider__text">
+                Software Engineer II at Postman | GitHub Star | GSoC Mentor
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-slider__item swiper-slide">
+            <div class="blog-slider__img">
+              <img src="../public/img/speaker/shaksham saini.jpeg" alt="" />
+            </div>
+            <div class="blog-slider__content">
+              <div class="blog-slider__title">SAKSHAM SAINI</div>
+              <div class="blog-slider__text">
+                CTO & Co-founder @ Vorphy India
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card2">
-          <img
-            src="../public/img/speaker/vanshika garg.jpeg"
-            class="speakerImage"
-          />
-          <p class="speakerName">Vanshika Garg</p>
-          <p class="speakerProfile">
-            Fractal Analytics | vGHC'21, GHCI & EATON Scholar
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card2">
-          <img
-            src="../public/img/speaker/vinit shahdeo.jpeg"
-            class="speakerImage"
-          />
-          <p class="speakerName">Vinit Shahdeo</p>
-          <p class="speakerProfile">
-            SDE 2 @ Postman | Github Star | GSoC Mentor
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card2">
-          <img
-            src="../public/img/speaker/shaksham saini.jpeg"
-            class="speakerImage"
-          />
-          <p class="speakerName">Shaksham Saini</p>
-          <p class="speakerProfile">CTO & Co-founder @ Vorphy India</p>
-        </div>
+        <div class="blog-slider__pagination"></div>
       </div>
     </div>
 
-    <!-- Sponsors -->
-    <div id="sponsors" style="text-align: center; margin-top: 20%">
+    <!-- sponsors -->
+    <div id="sponsors" style="margin-top: 20%; text-align: center">
       <h1 class="title" style="margin-top: 8%; margin-bottom: 2%">Sponsors</h1>
-      <div style="color: white; text-align: center; margin: 0 5% 5% 5%">
-        <i
-          >Sponsors of our event will be anounced soon. Stay tuned for more
-          exciting updates!</i
-        >
+      <div style="color: white; text-align: center; margin: 0 5% 0 5%">
+        <i>We will shortly announce our sponsors. Stay tuned......</i>
       </div>
       <button
         class="button"
         onclick="window.location.href = 'https://www.youtube.com/'"
+        style="margin-top: 5%"
       >
         Sponsor Us
       </button>
@@ -393,18 +422,57 @@
       </div>
     </div>
 
-    <div class="footer">
-      Made with ❤️ by
-      <a
-        href="https://innogeeks.in/"
-        style="text-decoration: none; color: white"
-        >Team Innogeeks</a
-      >
-    </div>
+    <footer class="footer">
+      <div class="footer__addr">
+        <img src="../public/img/19.png" class="footer__logo">
 
+        <h2 style="margin-bottom: 3%;"><b>Contact</b></h2>
+
+        <address>
+          Innogeeks, KIET Group of Institutions<br />
+        </address>
+      </div>
+      <ul class="footer__nav">
+        <li class="nav__item">
+          <h2 class="nav__title"><b>Socials</b></h2>
+
+          <ul class="nav__ul">
+            <li>
+              <a href="https://www.instagram.com/innogeeks.kiet/?hl=en">Instagram</a>
+            </li>
+
+            <li>
+              <a href="mailto:innogeeks@kiet.edu">Mail us</a>
+            </li>
+
+            <li>
+              <a href="https://innogeeks.in/">Website</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="legal">
+        <p>&copy; 2023 Something. All rights reserved.</p>
+
+        <div class="legal__links">
+          <span
+            >Made with <span class="heart">❤️</span> by Team Innogeeks</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="../public/js/particles.js"></script>
     <script src="../public/js/particle.js"></script>
     <script src="../public/js/faq.js"></script>
     <script src="../public/js/timer.js"></script>
+    <script src="../public/js/speaker.js"></script>
+    <!-- <script src="../public/js/loader.js"></script> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
