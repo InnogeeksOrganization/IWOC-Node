@@ -54,7 +54,7 @@ particlesJS("particles-js", {
       },
       move: {
         enable: true,
-        speed: 1.5,
+        speed: 5,
         direction: "bottom",
         random: false,
         straight: false,
@@ -71,11 +71,11 @@ particlesJS("particles-js", {
       detect_on: "canvas",
       events: {
         onhover: {
-          enable: false,
-          mode: "bubble"
+          enable: true,
+          mode: "repulse"
         },
         onclick: {
-          enable: true,
+          enable: false,
           mode: "repulse"
         },
         resize: true
@@ -95,7 +95,7 @@ particlesJS("particles-js", {
           speed: 3
         },
         repulse: {
-          distance: 200,
+          distance: 100,
           duration: 0.4
         },
         push: {
