@@ -49,6 +49,7 @@
 
   .navimg{
     width: 40%;
+    overflow: clip;
     /* left: 0 ; */
     /* height: 10%; */
   }
