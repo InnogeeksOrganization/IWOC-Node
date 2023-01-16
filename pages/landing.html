@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Sofia+Sans+Semi+Condensed:wght@300&display=swap"
       rel="stylesheet"
     />
+  
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <!-- AOS CDN -->
+ 
     <link rel="stylesheet" href="../public/css/particle.css" />
     <link rel="stylesheet" href="../public/css/navbar.css" />
     <link rel="stylesheet" href="../public/css/logo.css" />
@@ -55,9 +59,10 @@
           <!-- <a href="/login">Sign Up</a> -->
         </div>
       </div>
-    </nav>
+    </nav><div data-aos="zoom-in">
     <div class="logo" id="logo">
-      <img src="../public/img/iwoc_logo.png" class="mainlogo" />
+      <img src="../public/img/iwoc_logo.png" class="mainlogo" /></div>
+      </div>
       <div class="container">
         <h1 id="headline" style="font-weight: bolder">Registration opens in</h1>
         <div id="countdown">
@@ -138,20 +143,23 @@
     <h1 class="title" id="timeline" style="margin-top: 15%">Timeline</h1>
     <section id="cd-timeline" class="cd-container">
       <div class="cd-timeline-block">
+        
         <div class="cd-timeline-img cd-movie"></div>
+        <div data-aos="fade-right">
 
         <div class="cd-timeline-content">
-          <h2>January 20th, 2023</h2>
+           <h2>January 20th, 2023</h2>
           <p>
             Registration opens, allowing potential contributors to sign up for
             the event
           </p>
         </div>
       </div>
+    </div>
 
       <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-picture"></div>
-
+        <div data-aos="fade-left">
         <div class="cd-timeline-content">
           <h2>Febuary 1st, 2023</h2>
           <p>
@@ -159,34 +167,38 @@
             projects listed.
           </p>
         </div>
+        </div>
       </div>
 
       <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-location"></div>
-
+        <div data-aos="fade-right">
         <div class="cd-timeline-content">
           <h2>Febuary 4th and 11th, 2023</h2>
           <p>
             In-person sessions led by industry experts on various technologies
           </p>
         </div>
+        </div>
       </div>
 
       <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-location"></div>
-
+        <div data-aos="fade-left">
         <div class="cd-timeline-content">
           <h2>Febuary 5, 12, 19 & 26th, 2023</h2>
           <p>Virtual sessions conducted by expert professionals</p>
+        </div>
         </div>
       </div>
 
       <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-movie"></div>
-
+        <div data-aos="fade-right">
         <div class="cd-timeline-content">
           <h2>March 1st, 2023</h2>
           <p>Event closing ceremony, including the announcement of results</p>
+        </div>
         </div>
       </div>
     </section>
@@ -202,7 +214,7 @@
         >
       </div>
     </div>
-
+ 
     <!-- speakers -->
     <h1 class="title" id="speaker" style="margin-top: 20%">Speakers</h1>
     <div class="speakerbody">
@@ -456,5 +468,9 @@
     <script src="../public/js/faq.js"></script>
     <script src="../public/js/timer.js"></script>
     <script src="../public/js/speaker.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
