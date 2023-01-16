@@ -3,8 +3,12 @@
     flex-flow: row wrap;
     padding: 30px 30px 20px 30px;
     color: #f3e4e4;
-    background-color: rgb(15, 14, 14);
-    border-top: 1px solid #e5e5e5;
+    background: rgba(255, 255, 255, 0.14);
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.1px);
+-webkit-backdrop-filter: blur(3.1px);
+border: 1px solid rgba(255, 255, 255, 0.39);
     /* text-align: center; */
   }
   
@@ -22,6 +26,7 @@
   }
   
   .footer__addr h2 {
+    color: linear-gradient(to right,#c5dbf0 ,rgb(135, 178, 206));;
     margin-top: 1.3em;
     font-size: 15px;
     font-weight: 400;
@@ -34,7 +39,7 @@
   
   .footer address {
     font-style: normal;
-    color: #999;
+    color: linear-gradient(to right,#c5dbf0 ,rgb(135, 178, 206));;
   }
   
   .footer__btn {
@@ -71,6 +76,7 @@
     /* flex-direction: column; */
     align-items: center;
     justify-content: end;
+    color: linear-gradient(to right,#c5dbf0 ,rgb(135, 178, 206));;
   }
   
   .footer__nav > * {
@@ -79,7 +85,7 @@
   }
   
   .nav__ul a {
-    color: #999;
+    color: rgb(231, 218, 218);
   }
   
   .nav__ul--extra {
@@ -90,7 +96,7 @@
   .legal {
     display: flex;
     flex-wrap: wrap;
-    color: #999;
+    color: rgb(226, 214, 214);
   }
     
   .legal__links {
@@ -99,7 +105,7 @@
   }
   
   .heart {
-    color: #2f2f2f;
+    color: #f10404;
   }
   
   @media screen and (min-width: 24.375em) {
