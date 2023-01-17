@@ -115,7 +115,7 @@ Main components
   background: linear-gradient(to right, #c5dbf0, rgb(135, 178, 206));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border: 2px solid ;
+  /* border: 2px solid ; */
   border: 5px solid;
   border-image: linear-gradient(45deg, #c5dbf0, rgb(44, 140, 205)) 1;
 }
