@@ -5,11 +5,7 @@
 .navs {
   height: 65px;
   width: 100%;
-  /* background: linear-gradient(to right, #c5dbf0 , rgba(84, 179, 238, 0.14)); */
   background: linear-gradient(180deg, rgba(217, 239, 248, 0.2), rgb(135, 178, 206, .02));
-  /* From https://css.glass */
-  /* background: rgba(255, 255, 255, 0.14); */
-  /* border-radius: 16px; */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(3.1px);
   -webkit-backdrop-filter: blur(3.1px);
@@ -51,42 +47,10 @@
   color: #e7e3e3;
 }
 
-.navs>#navs-check {
+.navs>#nav-check {
   display: none;
 }
 
-.navsimg {
-  width: 40%;
-  overflow: clip;
-  /* left: 0 ; */
-  /* height: 10%; */
-}
-
-@media only screen and (min-width: 400px) {
-  .navsimg {
-    width: 20%;
-  }
-}
-
-/* @media only screen and (min-width: 600px){
-    .navsimg{
-      width: 10%;
-    }
-  } */
-
-@media only screen and (min-width: 720px) {
-  .navsimg {
-    width: 15%;
-    margin-top: 1%;
-  }
-}
-
-@media only screen and (min-width: 920px) {
-  .navsimg {
-    width: 9%;
-    margin-top: 0.5%;
-  }
-}
 
 @media (max-width:720px) {
   .navs>.navs-btn {
@@ -104,8 +68,8 @@
   }
 
   .navs>.navs-btn>label:hover,
-  .navs #navs-check:checked~.navs-btn>label {
-    background-color: rgba(0, 0, 0, 0.3);
+  .navs #nav-check:checked~.navs-btn>label {
+    background-color: rgba(0, 0, 0, 0.301);
   }
 
   .navs>.navs-btn>label>span {
@@ -121,10 +85,12 @@
     position: absolute;
     display: block;
     width: 100%;
-    background-color: #333;
+    background-color: rgb(0, 0, 0);
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
+    overflow-x: auto;
+    z-index: -1;
     top: 50px;
     left: 0px;
   }
