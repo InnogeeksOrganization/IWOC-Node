@@ -7,6 +7,7 @@ const bcrypt = require("bcrypt");
 const path = require("path");
 const User = require("../config/user");
 const Admin = require("../config/admin");
+const ProjectHandler = require("../config/ProjectHandler");
 
 const router = express.Router();
 
@@ -153,6 +154,23 @@ router.post(
     failureRedirect: "/admin-login",
     successRedirect: "/dashboard",
   })
+);
+
+router.post(
+  "/register",
+  async (req,res,next) => {
+    console.log(req.body);
+    await ProjectHandler.addProject(req.body);
+
+    // if(validateData(req.body)){
+    //   await addProject(req.body);
+    //   next();
+    // }
+    // else
+      
+  },(req,res) =>{
+    res.send("Done");
+  }
 );
 
 router.post("/admin-register", (req, res, next) => {

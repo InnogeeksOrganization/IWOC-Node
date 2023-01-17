@@ -55,7 +55,7 @@ app.use(routes);
 
 
 // Port for running instance
-app.listen(process.env.PORT || 5000, (err) => {
+app.listen(process.env.PORT || 6969, (err) => {
   if(err){
     console.log(err);
   }else{
