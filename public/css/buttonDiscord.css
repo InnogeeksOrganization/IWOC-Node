@@ -1,67 +1,77 @@
-.discordbutton{
+.twobuttons {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    --fs-size: 1.5em;
+    --border-right: 4px;
 }
 
-@media only screen and (min-width: 720px) {
-    .discordbutton{
-        flex-direction: row;
-    }
-  }
+.guidebutton {
+    display: none;
+}
 
-.cssbuttons-io-button {
-    margin: 1%;
-    background: rgb(135, 178, 206);
-    color: black;
-    font-family: inherit;
-    padding: 0.35em;
-    padding-left: 1.2em;
-    font-size: 17px;
-    font-weight: 500;
-    border-radius: 0.9em;
+
+
+@media only screen and (min-width: 720px) {
+    .twobuttons {
+        flex-direction: row;
+        --fs-size: 2em;
+        --border-right: 6px;
+    }
+
+    .guidebutton {
+        display: inline-block;
+        margin-left: 15px;
+    }
+
+    .discordbutton {
+        margin-right: 15px;
+    }
+}
+
+
+/* === removing default button style ===*/
+.discordbutton,
+.guidebutton {
+    height: auto;
+    background: transparent;
+    padding: 0;
     border: none;
-    letter-spacing: 0.05em;
-    display: flex;
-    align-items: center;
-    box-shadow: inset 0 0 1.6em -0.6em rgb(79, 136, 173);
-    overflow: hidden;
+}
+
+/* button styling */
+.discordbutton,
+.guidebutton {
+    --text-stroke-color: rgba(255, 255, 255, 1);
+    --animation-color: #2AAEE3;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
     position: relative;
-    height: 2.8em;
-    padding-right: 3.3em;
-   }
-   
-   .cssbuttons-io-button .icon {
-    background: white;
-    margin-left: 1em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+/* this is the text, when you hover on button */
+.hover-text {
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 2.2em;
-    width: 2.2em;
-    border-radius: 0.7em;
-    box-shadow: 0.1em 0.1em 0.6em 0.2em rgb(79, 136, 173);
-    right: 0.3em;
-    transition: all 0.3s;
-   }
-   
-   .cssbuttons-io-button:hover .icon {
-    width: calc(100% - 0.6em);
-   }
-   
-   .cssbuttons-io-button .icon i {
-    width: 1.1em;
-    transition: transform 0.3s;
-    color: rgb(79, 136, 173);
-   }
-   
-   .cssbuttons-io-button:hover .icon i {
-    transform: translateX(0.1em);
-   }
-   
-   .cssbuttons-io-button:active .icon {
-    transform: scale(0.95);
-   }
-   
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+}
+
+/* hover */
+.discordbutton:hover .hover-text,
+.guidebutton:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+}
