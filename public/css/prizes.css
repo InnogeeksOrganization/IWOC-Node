@@ -1,0 +1,34 @@
+.card {
+    width: 190px;
+    height: 254px;
+    background: rgba(10, 10, 10, 0.651);;
+    border: 2px solid rgb(135, 178, 206);
+    box-shadow: 2px 2px 15px #000000 inset;
+    text-align: center;
+    color: #c5dbf0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pacifico';
+    border-radius: 5%;
+    margin: 2%;
+  }
+  
+  .card:hover {
+    color: #c5dbf0;
+    box-shadow: 2px 2px 15px rgb(135, 178, 206) inset;
+  }
+
+  .prize{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media only screen and (min-width: 720px) {
+    .prize{
+        flex-direction: row;
+    }
+  }
+  
