@@ -1,4 +1,4 @@
-.about{
+.about {
     margin-top: 5%;
     margin-bottom: 5%;
     /* background: linear-gradient(to right, #c5dbf0 , rgb(135, 178, 206)); */
@@ -6,21 +6,21 @@
     flex-direction: column;
     padding: 5%;
     /* From https://css.glass */
-background: rgba(255, 255, 255, 0.14);
-/* border-radius: 16px; */
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(3.1px);
--webkit-backdrop-filter: blur(3.1px);
-border: 1px solid rgba(255, 255, 255, 0.39);
+    background: rgba(255, 255, 255, 0.14);
+    /* border-radius: 16px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.1px);
+    -webkit-backdrop-filter: blur(3.1px);
+    /* border: 1px solid rgba(255, 255, 255, 0.39); */
 }
 
 @media only screen and (min-width: 720px) {
-    .about{
+    .about {
         flex-direction: row;
     }
 }
 
-.aboutblocks{
+.aboutblocks {
     display: flex;
     flex-direction: column;
     margin-top: auto;
@@ -28,13 +28,13 @@ border: 1px solid rgba(255, 255, 255, 0.39);
     /* margin-left: 5%; */
 }
 
-.aboutrow{
+.aboutrow {
     display: flex;
     flex-direction: row;
     /* margin: 5%;   */
 }
 
-.aboutsection{
+.aboutsection {
     width: 70%;
     /* margin-left: auto; */
     margin: auto;
@@ -44,72 +44,68 @@ border: 1px solid rgba(255, 255, 255, 0.39);
     /* margin-bottom: auto; */
     /* font-size: 72px; */
     /* gradient on text */
-    background: linear-gradient(to right,#c5dbf0 ,rgb(135, 178, 206));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, #c5dbf0, rgb(135, 178, 206));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.abouttitle{
+.abouttitle {
     padding-bottom: 4%;
     padding-top: 2%;
     font-size: 2rem;
-   
+
 }
 
-.aboutnumber{
+.aboutnumber {
     font-size: 2.5rem;
     font-weight: normal;
     /* gradient on text */
-    background: linear-gradient(to right,#c5dbf0 ,rgb(135, 178, 206));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, #c5dbf0, rgb(135, 178, 206));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.aboutelement{
+.aboutelement {
     padding: 8%;
     /* text-align: center; */
 }
 
-.abouttext{
+.abouttext {
     font-size: 1rem;
     font-weight: bolder;
-     /* gradient on text */
-     background: linear-gradient(to right,#c5dbf0 ,rgb(135, 178, 206));
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
+    /* gradient on text */
+    background: linear-gradient(to right, #c5dbf0, rgb(135, 178, 206));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 @media only screen and (min-width: 720px) {
-    .aboutsection{
+    .aboutsection {
         margin: 0;
         margin-left: 5%;
         margin-right: 5%;
         width: 50%;
     }
 
-    .abouttitle{
+    .abouttitle {
         font-size: 3.5rem;
     }
 
-    .aboutnumber{
+    .aboutnumber {
         font-size: 2.65rem;
     }
 
-    .abouttext{
+    .abouttext {
         font-size: 1.3rem;
     }
 }
 
-@media only screen and (min-width: 1120px){
-    .aboutnumber{
+@media only screen and (min-width: 1120px) {
+    .aboutnumber {
         font-size: 4rem;
     }
 
-    .abouttext{
+    .abouttext {
         font-size: 1.5rem;
     }
 }
-
-
-
-
