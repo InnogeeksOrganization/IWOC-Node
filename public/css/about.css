@@ -68,7 +68,7 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin-left: 5em;
+    margin-left: em;
     /* border: 5px solid; */
     /* border-image: linear-gradient(45deg, purple, orange) 1; */
     height: 235px; 
