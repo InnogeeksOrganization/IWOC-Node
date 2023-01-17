@@ -1,45 +1,67 @@
 .discordbutton{
-    align-items: center;
-    justify-content: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 @media only screen and (min-width: 720px) {
     .discordbutton{
         flex-direction: row;
-        text-align: center;
-
     }
-}
+  }
 
-
-
-.button {
- padding: 17px 40px;
- border-radius: 50px;
- border: 0;
- margin: 1%;
- background: linear-gradient(to right, #c5dbf0 , rgb(135, 178, 206));
- box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
- letter-spacing: 1.5px;
- text-transform: uppercase;
- font-size: 15px;
- transition: all .5s ease;
-}
-
-.button:hover {
- letter-spacing: 3px;
- background: rgb(24, 142, 220);
- color: hsl(0, 0%, 100%);
- box-shadow: rgb(24, 174, 220) 0px 7px 29px 0px;
-}
-
-.button:active {
- letter-spacing: 3px;
- background-color: hsl(261deg 80% 48%);
- color: hsl(0, 0%, 100%);
- box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
- transform: translateY(10px);
- transition: 100ms;
-}
+.cssbuttons-io-button {
+    margin: 1%;
+    background: rgb(135, 178, 206);
+    color: black;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em rgb(79, 136, 173);
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+   }
+   
+   .cssbuttons-io-button .icon {
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em rgb(79, 136, 173);
+    right: 0.3em;
+    transition: all 0.3s;
+   }
+   
+   .cssbuttons-io-button:hover .icon {
+    width: calc(100% - 0.6em);
+   }
+   
+   .cssbuttons-io-button .icon i {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: rgb(79, 136, 173);
+   }
+   
+   .cssbuttons-io-button:hover .icon i {
+    transform: translateX(0.1em);
+   }
+   
+   .cssbuttons-io-button:active .icon {
+    transform: scale(0.95);
+   }
+   

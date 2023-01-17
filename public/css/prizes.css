@@ -9,9 +9,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Pacifico';
+    /* font-family: 'Pacifico'; */
     border-radius: 5%;
     margin: 2%;
+    font-size: x-large;
   }
   
   .card:hover {
