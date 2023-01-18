@@ -1,5 +1,5 @@
 button {
-    --color: #8e3dea;
+    --color: rgb(135, 178, 206);
     font-family: inherit;
     display: inline-block;
     width: 12em;
