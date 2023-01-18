@@ -22,8 +22,12 @@
   },
   "homepage": "http://innogeeks.in",
   "dependencies": {
+    "@admin-bro/express": "^3.1.0",
+    "@admin-bro/mongoose": "^1.1.0",
+    "admin-bro": "^4.0.1",
     "bcrypt": "^5.1.0",
     "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.6",
     "d": "^1.0.1",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
@@ -32,10 +36,10 @@
     "mongodb": "^4.13.0",
     "mongoose": "^6.8.1",
     "mongoose-findorcreate": "^3.0.0",
+    "octokit": "^2.0.10",
     "passport": "^0.6.0",
     "passport-github2": "^0.1.12",
-    "passport-local": "^1.0.0",
-    "octokit": "^2.0.10"
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

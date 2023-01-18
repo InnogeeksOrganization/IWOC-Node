@@ -5,8 +5,7 @@ const express = require("express");
 const passport = require("passport");
 const bcrypt = require("bcrypt");
 const path = require("path");
-const User = require("../config/user"); 
-const Admin = require("../config/admin");
+const User = require("../config/user");
 const ProjectHandler = require("../config/ProjectHandler");
 
 const router = express.Router();
@@ -157,7 +156,7 @@ router.post(
 );
 
 router.post(
-  "/register",
+  "/register-project",
   async (req,res,next) => {
     console.log(req.body);
     await ProjectHandler.addProject(req.body);
@@ -200,3 +199,9 @@ router.get("/logout", (req, res, next) => {
     res.redirect("/");
   });
 });
+
+
+// function validateData(data){
+
+//   if(data.name )
+// }
