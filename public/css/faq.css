@@ -69,11 +69,14 @@
     height: 0;
     opacity: 0;
     overflow: hidden;
-    background: linear-gradient(to right, #c5dbf0 , rgb(135, 178, 206));
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.1px);
+    -webkit-backdrop-filter: blur(3.1px);
     border-radius: 10px;
     transition: height 400ms ease-in-out, opacity 350ms linear;
     display: flex;
-    color: black;
+    color: rgb(135, 178, 206);
 }
     .accordion__item--panel > p {
         margin: 0;
