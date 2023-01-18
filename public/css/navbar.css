@@ -1,8 +1,13 @@
 .side{
-	margin-left: 30%;
+	margin-left: 100%;
 	font-size: large;
 }
 
+@media screen and (min-width: 900px){
+	.side{
+		margin-left: 28%;
+	}
+}
 @media screen and (min-width: 1000px){
 	.side{
 		margin-left: 50%;
@@ -20,7 +25,7 @@
 }
 @media screen and (min-width: 1500px){
 	.side{
-		margin-left: 75%;
+		margin-left: 70%;
 	}
 }
 @media screen and (min-width: 1800px){
