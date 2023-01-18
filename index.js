@@ -3,6 +3,7 @@ const session = require('express-session');
 const passport = require("passport");
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
+const adminrouter = require('./routes/app.router');
 require('dotenv').config();
 
 require('./config/passport')
@@ -22,12 +23,10 @@ const sessionStore = MongoStore.create({
 
 
 // Compulsory Middlewares
+app.use('/admin',adminrouter); //Admin route
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/public',express.static(__dirname + '/public'));    //If static files does not load try: app.use(express.static('public'));
-
-
-
 
 
 // Session Middleware
@@ -53,12 +52,22 @@ app.set('view engine', 'ejs');
 
 app.use(routes);
 
-
 // Port for running instance
-app.listen(process.env.PORT || 6969, (err) => {
+// const PORT = 6969;
+
+var PORT;
+
+if(process.env.PORT){
+  PORT = process.env.PORT;
+}
+else{
+  const PORT = 6969;
+}
+
+app.listen(PORT , (err) => {
   if(err){
     console.log(err);
   }else{
-    console.log("app is listening to port 5000");
+    console.log(`app is listening to port ` + PORT);
   }
 });
