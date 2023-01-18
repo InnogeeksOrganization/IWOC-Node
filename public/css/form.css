@@ -57,3 +57,15 @@ canvas {
       height: 100%;
       z-index: -1;
     }
+    #form-head{
+        background: linear-gradient(to right, #4084c4, rgb(135, 178, 206));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        
+    }
+    #form{
+        background: rgba(255, 255, 255, 0.14);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(3.1px);
+        -webkit-backdrop-filter: blur(3.1px);
+    }
