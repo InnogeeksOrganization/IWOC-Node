@@ -31,16 +31,22 @@ const addProject = async function (data){
     console.log(projects);
     if(projects == null){
       await Project.create({
-        projectId: resp.data.id,
-        projectName:resp.data.name,
-        projectUrl:resp.data.html_url,
-        description:resp.data.description,
+        projectId: 0,
+        projectName: data.projectName,
+        projectDesc: data.description,
+        repoId: resp.data.id,
+        repoName:resp.data.name,
+        repoUrl:resp.data.html_url,
+        repoDesc:resp.data.description,
         language: [resp.data.language],
         topic: resp.data.topic,
         open_issues: resp.data.open_issues,
         stars: resp.data.stargrazers_count,
         difficulty: "Intermediate",
         owner: {
+            ownerName: data.name,
+            ownerEmail: data.email,
+            ownerPhone: data.phone,
             ownerId: resp.data.owner.id,
             ownerUsername: resp.data.owner.login,
             avatar_url: resp.data.owner.avatar_url,

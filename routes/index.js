@@ -156,7 +156,7 @@ router.post(
 );
 
 router.post(
-  "/register",
+  "/register-project",
   async (req,res,next) => {
     console.log(req.body);
     await ProjectHandler.addProject(req.body);
@@ -199,3 +199,9 @@ router.get("/logout", (req, res, next) => {
     res.redirect("/");
   });
 });
+
+
+// function validateData(data){
+
+//   if(data.name )
+// }
