@@ -1,3 +1,44 @@
+.side{
+	margin-left: 30%;
+	font-size: large;
+}
+
+@media screen and (min-width: 1000px){
+	.side{
+		margin-left: 50%;
+	}
+}
+@media screen and (min-width: 1200px){
+	.side{
+		margin-left: 60%;
+	}
+}
+@media screen and (min-width: 1380px){
+	.side{
+		margin-left: 65%;
+	}
+}
+@media screen and (min-width: 1500px){
+	.side{
+		margin-left: 75%;
+	}
+}
+@media screen and (min-width: 1800px){
+	.side{
+		margin-left: 80%;
+	}
+}
+@media screen and (min-width: 2000px){
+	.side{
+		margin-left: 90%;
+	}
+}
+@media screen and (min-width: 2200px){
+	.side{
+		margin-left: 100%;
+	}
+}
+
 .start-header {
 	opacity: 1;
 	transform: translateY(0);
