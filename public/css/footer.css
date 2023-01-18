@@ -22,7 +22,7 @@
 }
 
 .footer__logo {
-  width: 70%;
+  width: 100%;
 }
 
 .footer__addr h2 {
@@ -84,7 +84,8 @@
 
 .footer__nav>* {
   flex: 1 50%;
-  margin-right: 1.25em;
+  margin-right: 5rem;
+  margin-left: 10%;
 }
 
 .nav__ul a {
@@ -110,6 +111,26 @@
 .heart {
   color: #f10404;
 }
+
+
+.kiet__logo{
+  width: 20%;
+  margin-left: 20%;
+}
+
+
+@media screen and (min-width: 720px){
+  .footer__logo{
+    width: 130%;
+  }
+  .footer__nav{
+    margin-top: 10%;
+  }
+  .kiet__logo{
+    margin-left: 40%;
+    width: 40%;
+  }
+} 
 
 @media screen and (min-width: 24.375em) {
   .legal .legal__links {
