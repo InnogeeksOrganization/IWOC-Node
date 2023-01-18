@@ -1,4 +1,6 @@
-.twobuttons {
+
+.twobuttons,
+.sponsors {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,7 +35,8 @@
 
 /* === removing default button style ===*/
 .discordbutton,
-.guidebutton {
+.guidebutton,
+.sponsorbutton {
     height: auto;
     background: transparent;
     padding: 0;
@@ -42,7 +45,8 @@
 
 /* button styling */
 .discordbutton,
-.guidebutton {
+.guidebutton,
+.sponsorbutton {
     --text-stroke-color: rgba(255, 255, 255, 1);
     --animation-color: #2AAEE3;
     letter-spacing: 3px;
@@ -71,7 +75,8 @@
 
 /* hover */
 .discordbutton:hover .hover-text,
-.guidebutton:hover .hover-text {
+.guidebutton:hover .hover-text ,
+.sponsorbutton:hover .hover-text{
     width: 100%;
     filter: drop-shadow(0 0 23px var(--animation-color))
 }

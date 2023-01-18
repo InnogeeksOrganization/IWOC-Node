@@ -109,15 +109,15 @@ Main components
   margin-right: 30px;
   padding: 1em;
   background: transparent;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px #4f91d355;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   background: linear-gradient(to right, #c5dbf0, rgb(135, 178, 206));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* border: 2px solid ; */
-  border: 5px solid;
-  border-image: linear-gradient(45deg, #c5dbf0, rgb(44, 140, 205)) 1;
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #c5dbf0, #4F91D3,#4F91D3,#b23ca492) 1;
 }
 .cd-timeline-content .timeline-content-info {
   background: rgb(12, 128, 136);
