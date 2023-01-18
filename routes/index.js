@@ -6,7 +6,6 @@ const passport = require("passport");
 const bcrypt = require("bcrypt");
 const path = require("path");
 const User = require("../config/user");
-const Admin = require("../config/admin");
 const ProjectHandler = require("../config/ProjectHandler");
 
 const router = express.Router();
