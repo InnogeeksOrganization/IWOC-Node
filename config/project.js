@@ -4,10 +4,11 @@ const ownerSchema = new mongoose.Schema({
     ownerName: String,
     ownerEmail: String,
     ownerPhone: String,
+    ownerLib: String,
     ownerId: String,
     ownerUsername: String,
     avatar_url: String,
-    profile_url: String,
+    profile_url: String
 });
 
 

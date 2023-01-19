@@ -1,44 +1,134 @@
 #particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  } */
-  /* oldcss */
-  .form {
-      position: relative;
-      height: 1vh;
-    }
-  
-    body {
-      height: 193vh;
-      position: relative;
-      /* width: 100%; */
-      background-color: #111827;
-    }
-    #particles-js {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-    #form-head{
-        background: linear-gradient(to right, #4084c4, rgb(135, 178, 206));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        
-    }
-    #form{
-        background: rgba(255, 255, 255, 0.14);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(3.1px);
-        -webkit-backdrop-filter: blur(3.1px);
-    }
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 
+*/
 
-.formBackground{
+/* oldcss */
+.form {
+  position: relative;
+  height: 1vh;
+}
+
+body {
+  height: 193vh;
+  position: relative;
+  /* width: 100%; */
+  background-color: #111827;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#form-head {
+  background: linear-gradient(to right, #4084c4, rgb(135, 178, 206));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+#form {
   background: rgba(255, 255, 255, 0.14);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3.1px);
-    -webkit-backdrop-filter: blur(3.1px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.1px);
+  -webkit-backdrop-filter: blur(3.1px);
+}
+
+
+.formBackground {
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.1px);
+  -webkit-backdrop-filter: blur(3.1px);
+}
+
+.error,
+.error1,
+.error2 {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 0.5em;
+  color: red;
+}
+
+
+.dialogCard {
+  visibility: visible;
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85vw;
+  /* max-width: 190px; */
+  height: auto;
+  padding: 0 20px 20px 20px;
+  margin: 0 auto;
+  background-color: rgba(1, 21, 53, 0.848);
+  backdrop-filter: blur(3.1px);
+  border-radius: 8px;
+  z-index: 1;
+  transition: top 1s;
+  
+}
+
+.enabled {
+  top: 3rem;
+}
+
+.disabled {
+  visibility: hidden;
+}
+
+
+.dialogTools {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 9px;
+}
+
+.dialogCircle {
+  padding: 0 4px;
+}
+
+.dBox {
+  display: inline-block;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  border-radius: 50%;
+}
+
+.dred {
+  background-color: #ff605c;
+}
+
+.dyellow {
+  background-color: #ffbd44;
+}
+
+.dgreen {
+  background-color: #00ca4e;
+}
+
+.card__content {
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .dialogCard {
+
+    width: 50vw;
+  }
 }

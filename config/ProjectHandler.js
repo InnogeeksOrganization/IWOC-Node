@@ -47,6 +47,7 @@ const addProject = async function (data){
             ownerName: data.name,
             ownerEmail: data.email,
             ownerPhone: data.phone,
+            ownerLib: data.libid,
             ownerId: resp.data.owner.id,
             ownerUsername: resp.data.owner.login,
             avatar_url: resp.data.owner.avatar_url,

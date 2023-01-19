@@ -7,6 +7,7 @@ const bcrypt = require("bcrypt");
 const path = require("path");
 const User = require("../config/user");
 const ProjectHandler = require("../config/ProjectHandler");
+const UserHandler = require("../config/UserHandler");
 
 const router = express.Router();
 
@@ -84,7 +85,7 @@ router.get(
     else next();
   },
   (req, res, next) => {
-    res.sendFile(path.join(__dirname, "../pages/register.html"));
+    res.sendFile(path.join(__dirname, "../pages/form.html"));
     console.log("Innogeeks Register Sending", req.session.passport);
   }
 );
@@ -157,7 +158,7 @@ router.post(
 
 router.post(
   "/register-project",
-  async (req,res,next) => {
+  async (req, res, next) => {
     console.log(req.body);
     await ProjectHandler.addProject(req.body);
 
@@ -166,11 +167,53 @@ router.post(
     //   next();
     // }
     // else
-      
-  },(req,res) =>{
+
+  }, (req, res) => {
     res.send("Done");
   }
 );
+
+router.post(
+  "/register",
+  async (req, res) => {
+    console.log(req.body);
+    if(validateData(req.body)){
+      const resp = await UserHandler.addUser(req.body);
+      res.send(JSON.stringify(resp));
+    }
+    else{
+      const resp = {message: "Invalid Data"};
+      res.send(JSON.stringify(resp));
+    } 
+  }
+);
+
+async function validateData(data) {
+
+
+  var regExp = /[0-9]/;
+
+  if (data.name == '' || data.name == null || regExp.test(data.name))
+    return false;
+
+  var chkExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  if (data.email == '' || data.email == null || !chkExp.test(data.email)) 
+    return false;
+  
+  if (data.libid == '' || data.libid == null) 
+    return false;
+
+  regExp = /[a-zA-Z]/g;
+
+  if (data.phone == '' || data.phone == null || regExp.test(data.phone) || data.phone.length != 10) 
+    return false;
+
+  if (data.git == '' || data.git == null)
+    return false;
+
+  return true;
+}
 
 router.post("/admin-register", (req, res, next) => {
   console.log(req.body);
