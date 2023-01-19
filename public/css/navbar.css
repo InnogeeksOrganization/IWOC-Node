@@ -1,46 +1,53 @@
 .side{
-	margin-left: 100%;
+	margin-left: 50%;
 	font-size: large;
 }
 
-@media screen and (min-width: 900px){
+
+
+@media screen and (min-width: 750px){
 	.side{
 		margin-left: 28%;
 	}
 }
+@media screen and (min-width: 900px){
+	.side{
+		margin-left: 35%;
+	}
+}
 @media screen and (min-width: 1000px){
 	.side{
-		margin-left: 50%;
+		margin-left: 45%;
 	}
 }
 @media screen and (min-width: 1200px){
 	.side{
-		margin-left: 60%;
+		margin-left: 53%;
 	}
 }
 @media screen and (min-width: 1380px){
 	.side{
-		margin-left: 65%;
+		margin-left: 58%;
 	}
 }
 @media screen and (min-width: 1500px){
 	.side{
-		margin-left: 70%;
+		margin-left: 63%;
 	}
 }
 @media screen and (min-width: 1800px){
 	.side{
-		margin-left: 80%;
+		margin-left: 70%;
 	}
 }
 @media screen and (min-width: 2000px){
 	.side{
-		margin-left: 90%;
+		margin-left: 80%;
 	}
 }
 @media screen and (min-width: 2200px){
 	.side{
-		margin-left: 100%;
+		margin-left: 90%;
 	}
 }
 

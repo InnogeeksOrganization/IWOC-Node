@@ -1,10 +1,10 @@
 .card {
-    width: 190px;
+    width: 230px;
     height: 254px;
     background: rgba(10, 10, 10, 0.651);;
     border: 2px solid rgb(135, 178, 206);
     box-shadow: 2px 2px 15px #000000 inset;
-    text-align: center;
+    /* text-align: center; */
     color: #c5dbf0;
     display: flex;
     align-items: center;
@@ -12,7 +12,8 @@
     /* font-family: 'Pacifico'; */
     border-radius: 5%;
     margin: 2%;
-    font-size: x-large;
+    margin-bottom: 15%;
+    /* font-size: x-large; */
   }
   
   .card:hover {
@@ -27,9 +28,50 @@
     justify-content: center;
   }
 
+div#first  {order: 2;}
+div#winner  {order: 1;}
+div#second {order: 3;}
+
+@media only screen and (min-width: 720px) {
+  div#first  {order: 1;}
+  div#winner  {order: 2;}
+  div#second {order: 3;}
+}
+
+.prizeheading{
+  font-size: x-large;
+  /* font-weight: bolder; */
+  margin-top: 7%;
+}
+
+.prizedescription{
+  font-size: xx-large;
+  text-align: center;
+  padding: 10% 5% 0 5%;
+  font-weight: 1000;
+}
+
+.title{
+  margin-bottom: 13%;
+}
+
+
   @media only screen and (min-width: 720px) {
     .prize{
         flex-direction: row;
     }
+    .title{
+      margin-bottom: 5%;
+    }
+    .card{
+      margin-bottom: 2%;
+    }
   }
+
+
+  
+
+  
+
+
   
