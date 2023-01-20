@@ -61,7 +61,7 @@ if(process.env.PORT){
   PORT = process.env.PORT;
 }
 else{
-  PORT = 5000;
+  const PORT = 5000;
 }
 
 app.listen(PORT , (err) => {
