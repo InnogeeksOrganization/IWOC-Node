@@ -37,7 +37,6 @@
 .discordbutton,
 .guidebutton,
 .sponsorbutton {
-    cursor: pointer;
     height: auto;
     background: transparent;
     padding: 0;
