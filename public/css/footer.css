@@ -24,6 +24,8 @@
 .footer__logo {
   height: auto;
   width: 100%;
+  /* object fit added  here */
+  object-fit: contain;
 }
 
 .footer__addr h2 {
