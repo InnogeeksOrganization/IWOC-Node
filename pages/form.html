@@ -78,8 +78,8 @@
   <div class="content">
     <div class="form">
       <div class="w-10/12 sm:w-9/12 md:w-9/12 lg:w-7/12 mx-auto">
-        <form class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto" onsubmit="return validateForm(event)" id="reg">
-          <a href="/"><img src="/public/img/iwoc_logo.png" class="w-2/3 ml-auto mr-auto" /></a>
+        <form class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto" onsubmit="return validateForm(event)" id="reg" autocomplete="off">
+          <a href="/"><img src="/public/img/iwoc_logo.png" class="w-2/3 ml-auto mr-auto"  /></a>
 
 
           <br />
@@ -90,9 +90,9 @@
               </h1>
               <div class="pb-1 pt-4 mt-2">
                 <div class="relative z-0">
-                  <input type="text" id="name" name="name"
+                  <input type="text" id="unique-name" name="name"
                     class="block py-2.5 px-0 w-full text-lg bg-transparent border-0 border-b-2 border-gray-900 appearance-none text-blue-200 dark:border-gray-100 dark:focus:border-blue-200 focus:outline-none focus:ring-0 focus:border-blue-200 peer"
-                    placeholder=" " />
+                    placeholder=" "  autocomplete="off" >
                   <label for="name"
                     class="absolute text-md text-gray-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-200 peer-focus:dark:text-blue-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Full
                     Name*</label>
@@ -104,7 +104,7 @@
                 <div class="relative z-0">
                   <input type="email" id="email" name="email"
                     class="block py-2.5 px-0 w-full text-lg bg-transparent border-0 border-b-2 border-gray-900 appearance-none text-blue-200 dark:border-gray-600 dark:focus:border-blue-200 focus:outline-none focus:ring-0 focus:border-blue-200 peer"
-                    placeholder=" " />
+                    placeholder=" " autocomplete="off" />
                   <label for="email"
                     class="absolute text-md text-gray-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-200 peer-focus:dark:text-blue-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                     Email*</label>
@@ -116,7 +116,7 @@
                 <div class="relative z-0">
                   <input type="text" id="libid" name="libid"
                     class="block py-2.5 px-0 w-full text-lg bg-transparent border-0 border-b-2 border-gray-900 appearance-none text-blue-200 dark:border-gray-600 dark:focus:border-blue-200 focus:outline-none focus:ring-0 focus:border-blue-200 peer"
-                    placeholder=" " />
+                    placeholder=" "  autocomplete="off"/>
                   <label for="libid"
                     class="absolute text-md text-gray-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-200 peer-focus:dark:text-blue-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Library
                     ID*</label>
@@ -128,7 +128,7 @@
                 <div class="relative z-0">
                   <input type="text" id="phone" name="phone"
                     class="block py-2.5 px-0 w-full text-lg bg-transparent border-0 border-b-2 border-gray-900 appearance-none text-blue-200 dark:border-gray-600 dark:focus:border-blue-200 focus:outline-none focus:ring-0 focus:border-blue-200 peer"
-                    placeholder=" " />
+                    placeholder=" "  autocomplete="off"/>
                   <label for="phone"
                     class="absolute text-md text-gray-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-200 peer-focus:dark:text-blue-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone
                     No.*</label>
@@ -139,7 +139,7 @@
                 <div class="relative z-0">
                   <input type="text" id="git" name="git"
                     class="block py-2.5 px-0 w-full text-lg bg-transparent border-0 border-b-2 border-gray-900 appearance-none text-blue-200 dark:border-gray-600 dark:focus:border-blue-200 focus:outline-none focus:ring-0 focus:border-blue-200 peer"
-                    placeholder=" " />
+                    placeholder=" "  autocomplete="off"/>
                   <label for="git"
                     class="absolute text-md text-gray-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-200 peer-focus:dark:text-blue-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Github Username*</label>
                   <div class="error"></div>

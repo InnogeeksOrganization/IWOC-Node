@@ -23,7 +23,7 @@ window.onload = ()=>{
 // })
 
 async function validateForm(e){
-    e.preventDefault();
+    // e.preventDefault();
 
     const name_val = name.value.trim();
     const email_val = email.value.trim();
