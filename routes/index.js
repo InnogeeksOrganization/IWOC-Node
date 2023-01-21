@@ -8,6 +8,9 @@ const path = require("path");
 const User = require("../config/user");
 const ProjectHandler = require("../config/ProjectHandler");
 const UserHandler = require("../config/UserHandler");
+const Project = require("../config/project")
+
+// const {db} = require("../config/fakeproject")
 
 const router = express.Router();
 
@@ -52,6 +55,10 @@ router.get(
     console.log("Innogeeks Dashboard Sending", req.session.passport);
   }
 );
+
+router.get("/project", (req, res, next) => {
+    res.render("project", {project : Project});
+});
 
 router.get(
   "/profile",
@@ -245,6 +252,7 @@ router.get("/logout", (req, res, next) => {
     res.redirect("/");
   });
 });
+
 
 
 // function validateData(data){
