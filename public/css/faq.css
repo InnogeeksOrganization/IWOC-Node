@@ -86,6 +86,7 @@
     }
 
 .accordion__item--trigger[aria-expanded="true"] + .accordion__item--panel {
-    height: 4.6875rem;
+    /* height: 4.6875rem; */
+    height: 6rem;
     opacity: 1;
 }
