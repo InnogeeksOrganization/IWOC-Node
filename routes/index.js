@@ -11,6 +11,8 @@ const UserHandler = require("../config/UserHandler");
 
 const router = express.Router();
 
+let tvisits = 0;
+
 // Checks if a user/ admin of the provided id exists in Mongo
 async function Exists(id) {
   const user = await User.findById(id);
@@ -33,6 +35,7 @@ async function authManager(req, res, next) {
 
 router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../pages/landing.html"));
+  console.log("IWOC Landing Sending ",tvisits++);
 });
 
 router.get(
