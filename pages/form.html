@@ -20,7 +20,7 @@
   }
 
   body {
-    height: 193vh;
+    height: 140vh;
     position: relative;
     /* width: 100%; */
     background-color: #111827;
@@ -35,7 +35,7 @@
   <script src="../public/js/register.js"></script>
 
   <div class="dialogCard disabled" id="dialogCard">
-    <div class="dialogTools">
+    <div class="dialogTools" onclick="hide()">
       <div class="dialogCircle">
         <span class="dred dBox"></span>
       </div>
@@ -52,12 +52,34 @@
     </div>
   </div>
 
+  <div class="loader"></div>
+    <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster" id="wheel-and-hamster">
+      <div class="wheel"></div>
+      <div class="hamster">
+        <div class="hamster__body">
+          <div class="hamster__head">
+            <div class="hamster__ear"></div>
+            <div class="hamster__eye"></div>
+            <div class="hamster__nose"></div>
+          </div>
+          <div class="hamster__limb hamster__limb--fr"></div>
+          <div class="hamster__limb hamster__limb--fl"></div>
+          <div class="hamster__limb hamster__limb--br"></div>
+          <div class="hamster__limb hamster__limb--bl"></div>
+          <div class="hamster__tail"></div>
+        </div>
+      </div>
+      <div class="spoke"></div>
+    </div>
+  </div>
+
+
   <!-- content -->
   <div class="content">
     <div class="form">
       <div class="w-10/12 sm:w-9/12 md:w-9/12 lg:w-7/12 mx-auto">
         <form class="sm:w-2/3 w-full px-4 lg:px-0 mx-auto" onsubmit="return validateForm(event)" id="reg">
-          <img src="/public/img/iwoc_logo.png" class="w-2/3 ml-auto mr-auto" />
+          <a href="/"><img src="/public/img/iwoc_logo.png" class="w-2/3 ml-auto mr-auto" /></a>
 
 
           <br />

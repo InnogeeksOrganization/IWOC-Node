@@ -1,5 +1,5 @@
 
-let form, name,email,phone,libid,git,dialog;
+let form, name,email,phone,libid,git,dialog,loader;
 
 window.onload = ()=>{
     console.log("Loaded");
@@ -10,6 +10,9 @@ window.onload = ()=>{
     libid = document.getElementById('libid');
     git = document.getElementById('git');
     dialog = document.getElementById('dialogCard');
+    dialogCross = document.getElementById('cross');
+    loader = document.getElementById('wheel-and-hamster');
+    console.log(loader);
 }
 
 
@@ -116,6 +119,11 @@ async function validateForm(e){
 
     if(valid){
 
+        console.log(loader.classList);
+        loader.classList.add('load');
+        console.log(loader.classList);
+
+
         const data = {
             name: name_val,
             email: email_val,
@@ -124,6 +132,10 @@ async function validateForm(e){
             git: git_val
         }
         console.log(data);
+
+        // const waitFor = delay => new Promise(resolve => setTimeout(resolve, delay));
+        // await waitFor(30000);
+
         await fetch("/register", {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
@@ -145,6 +157,8 @@ async function validateForm(e){
 
             dialog.classList.remove('disabled');
             dialog.classList.add('enabled');
+
+            loader.classList.remove('load');
             
           });
 
@@ -154,4 +168,9 @@ async function validateForm(e){
 
     console.log("Submit Clicked");
     return false;
+}
+
+function hide(){
+    dialog.classList.remove('enabled');
+    dialog.classList.add('disabled');
 }
