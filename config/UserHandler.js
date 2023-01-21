@@ -23,7 +23,7 @@ async function addUser(data) {
         resp = {
             status: 409,
             id: 2,
-            title: "❌User already exists!",
+            title: "✔User already exists!",
             message: "Try contacting team if you think this is a mistake."
         }
     }
