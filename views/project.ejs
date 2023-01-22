@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>IWoC Project Page</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="icon" type="image/x-icon" href="../public/img/iwoc_final_comp-min.png" />
 
     <link
       rel="stylesheet"
@@ -58,7 +60,7 @@
 
     <!-- cards -->
     <div class="projectcards">
-      <% for (var i = 0; i < project.count({}); i++) { %>
+      <% for (var i = 0; i < project.length; i++) { %>
         <div data-aos="zoom-in">
       <div
         class="rounded-3xl shadow-xl max-w-xs mt-16 maincard"
@@ -71,7 +73,7 @@
           <img src="../public/img/iwoc_final.png" class="rounded-full -mt-3" />
         </div>
         <div class="text-center px-3 pb-6 pt-2">
-          <h3 class="text-white text-xl bold font-sans"><%= project[i].projectName %><i class="fa fa-github" style="font-size:30px;color:white" onclick="window.href.location='<%= project[i].repoUrl %>'"></i></h3>
+          <h3 class="text-white text-xl bold font-sans"><%= project[i].projectName %>&nbsp; &nbsp;<i class="fa fa-github" style="font-size:30px;color:white" onclick="window.href.location='<%= project[i].repoUrl %>'"></i></h3>
           <p class="mt-2 font-sans font-light text-white">
             <%= project[i].projectDesc %>
           </p>
@@ -79,10 +81,10 @@
         <div class="pb-3 text-white techstack">
           <% for(var j = 0; j < project[i].language.length; j++) { %>
           <div class="text-center tech">
-            <span><%= project[i].language[j] %></span>
+            <span style="width: max-content; padding: 15%;"><%= project[i].language[j] %></span>
           </div>
-        </div>
           <% }%>
+        </div>
         </div>
       </div>
       <%}%>

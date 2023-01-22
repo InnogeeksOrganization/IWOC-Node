@@ -2,7 +2,7 @@
 let form, name,email,phone,libid,git,dialog,loader;
 
 window.onload = ()=>{
-    console.log("Loaded");
+    // console.log("Loaded");
     form = document.getElementById('reg');
     name = document.getElementById('name');
     email = document.getElementById('email');
@@ -12,7 +12,7 @@ window.onload = ()=>{
     dialog = document.getElementById('dialogCard');
     dialogCross = document.getElementById('cross');
     loader = document.getElementById('wheel-and-hamster');
-    console.log(loader);
+    // console.log(loader);
 }
 
 
@@ -40,7 +40,7 @@ async function validateForm(e){
     var regExp = /[0-9]/;
 
     if(valid && (name_val == '' || name_val==null || regExp.test(name_val))){
-        console.log("Name");
+        // console.log("Name");
         valid=false;
         errorDisplay.innerText = 'Enter a valid name.';
         inputControl.classList.add('error');
@@ -57,7 +57,7 @@ async function validateForm(e){
     var chkExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if(valid && (email_val == '' || email_val==null || !chkExp.test(email_val))){
-        console.log("Email");
+        // console.log("Email");
         valid=false;
         errorDisplay.innerText = 'Enter a valid email.';
         inputControl.classList.add('error');
@@ -72,7 +72,7 @@ async function validateForm(e){
     errorDisplay = inputControl.querySelector('.error');
 
     if(valid && (libid_val == '' || libid_val==null)){
-        console.log("Libid");
+        // console.log("Libid");
         valid=false;
         errorDisplay.innerText = 'Enter a valid library id.';
         inputControl.classList.add('error');
@@ -90,7 +90,7 @@ async function validateForm(e){
     regExp = /[a-zA-Z]/g;
 
     if(valid && (phone_val == '' || phone_val==null || regExp.test(phone_val) || phone_val.length != 10)){
-        console.log("Phone");
+        // console.log("Phone");
         valid=false;
         errorDisplay.innerText = 'Enter a valid phone number.';
         inputControl.classList.add('error');
@@ -106,7 +106,7 @@ async function validateForm(e){
     errorDisplay = inputControl.querySelector('.error');
 
     if(valid && (git_val == '' || git_val==null)){
-        console.log("Git");
+        // console.log("Git");
         valid=false;
         errorDisplay.innerText = 'Enter a valid git username.';
         inputControl.classList.add('error');
@@ -119,9 +119,9 @@ async function validateForm(e){
 
     if(valid){
 
-        console.log(loader.classList);
+        // console.log(loader.classList);
         loader.classList.add('load');
-        console.log(loader.classList);
+        // console.log(loader.classList);
 
 
         const data = {
@@ -131,7 +131,7 @@ async function validateForm(e){
             phone: phone_val,
             git: git_val
         }
-        console.log(data);
+        // console.log(data);
 
         // const waitFor = delay => new Promise(resolve => setTimeout(resolve, delay));
         // await waitFor(30000);
@@ -145,7 +145,7 @@ async function validateForm(e){
             },
             body: JSON.stringify(data) // body data type must match "Content-Type" header
           }).then((response) => response.json()).then((data)=>{
-            console.log(data);
+            // console.log(data);
 
             // const id = data.id;
             const content = document.getElementById('dContent');
