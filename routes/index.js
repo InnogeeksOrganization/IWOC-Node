@@ -8,6 +8,8 @@ const path = require("path");
 const User = require("../config/user");
 const ProjectHandler = require("../config/ProjectHandler");
 const UserHandler = require("../config/UserHandler");
+const Project = require("../config/project")
+
 
 const router = express.Router();
 
@@ -35,7 +37,7 @@ async function authManager(req, res, next) {
 
 router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../pages/landing.html"));
-  console.log("IWOC Landing Sending ",tvisits++);
+  // console.log("IWOC Landing Sending ",tvisits++);
 });
 
 router.get(
@@ -49,9 +51,14 @@ router.get(
     const user = await User.findById(req.session.passport.user);
 
     res.render("dashboard", { user: user });
-    console.log("Innogeeks Dashboard Sending", req.session.passport);
+    // console.log("Innogeeks Dashboard Sending", req.session.passport);
   }
 );
+
+router.get("/project", async (req, res, next) => {
+  const projects = await Project.find({ })
+    res.render("project", {project : projects});
+});
 
 router.get(
   "/profile",
@@ -76,7 +83,7 @@ router.get(
   (req, res, next) => {
     res.sendFile(path.join(__dirname, "../pages/login.html"));
     //console.log(req.session.passport);
-    console.log("Innogeeks Login Sending", req.session.passport);
+    // console.log("Innogeeks Login Sending", req.session.passport);
   }
 );
 
@@ -89,7 +96,7 @@ router.get(
   },
   (req, res, next) => {
     res.sendFile(path.join(__dirname, "../pages/form.html"));
-    console.log("Innogeeks Register Sending", req.session.passport);
+    // console.log("Innogeeks Register Sending", req.session.passport);
   }
 );
 
@@ -98,8 +105,8 @@ router.get(
 router.get(
   "/auth/github",
   (req, res, next) => {
-    console.log(req.session);
-    console.log(req.user);
+    // console.log(req.session);
+    // console.log(req.user);
     next();
   },
   passport.authenticate("github", { scope: ["user:email"] })
@@ -113,7 +120,7 @@ router.get(
     const d = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
     user.sessions.push({ sessionid: req.sessionID, date: d });
     await user.save();
-    console.log(req.session);
+    // console.log(req.session);
     res.redirect("/dashboard");
   }
 );
@@ -134,7 +141,7 @@ router.get(
   },
   (req, res, next) => {
     res.sendFile(path.join(__dirname, "../pages/admin-login.html"));
-    console.log("Innogeeks Admin Login Sending", req.session.passport);
+    // console.log("Innogeeks Admin Login Sending", req.session.passport);
   }
 );
 
@@ -147,7 +154,7 @@ router.get(
   },
   (req, res, next) => {
     res.sendFile(path.join(__dirname, "../pages/admin-register.html"));
-    console.log("Innogeeks Admin Register Sending", req.session.passport);
+    // console.log("Innogeeks Admin Register Sending", req.session.passport);
   }
 );
 
@@ -162,7 +169,7 @@ router.post(
 router.post(
   "/register-project",
   async (req, res, next) => {
-    console.log(req.body);
+    // console.log(req.body);
     await ProjectHandler.addProject(req.body);
 
     // if(validateData(req.body)){
@@ -179,7 +186,7 @@ router.post(
 router.post(
   "/register",
   async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     if(validateData(req.body)){
       const resp = await UserHandler.addUser(req.body);
       res.send(JSON.stringify(resp));
@@ -219,7 +226,7 @@ async function validateData(data) {
 }
 
 router.post("/admin-register", (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body);
 
   const hash = bcrypt.hashSync(req.body.password, 10);
 
@@ -231,7 +238,7 @@ router.post("/admin-register", (req, res, next) => {
   });
 
   newAdmin.save().then((user) => {
-    console.log(user);
+    // console.log(user);
   });
 
   res.redirect("/admin-login");
@@ -245,6 +252,7 @@ router.get("/logout", (req, res, next) => {
     res.redirect("/");
   });
 });
+
 
 
 // function validateData(data){
