@@ -21,7 +21,7 @@ const router = AdminBroExpress.buildAuthenticatedRouter(adminBro,{
     cookieName : 'iwocadmin',
     cookiePassword : 'iwocpassword',
     authenticate : async (email , password) => {
-        if(email === process.env.ADMIN_EMAIL || Admin.email && password === process.env.ADMIN_PASS || Admin.password){
+        if(email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASS){
             return Admin
         }
         else{
