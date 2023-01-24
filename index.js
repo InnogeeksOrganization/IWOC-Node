@@ -55,14 +55,8 @@ app.use(routes);
 // Port for running instance
 // const PORT = 6969;
 
-var PORT;
+const PORT = process.env.PORT;
 
-if(process.env.PORT){
-  PORT = process.env.PORT;
-}
-else{
-  PORT = 5000;
-}
 
 app.listen(PORT , (err) => {
   if(err){
