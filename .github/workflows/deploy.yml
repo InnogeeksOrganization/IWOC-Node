@@ -4,5 +4,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: echo
-        run: echo "Initialaization"
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18.10
+    - run: npm i
+    - run: npm start
