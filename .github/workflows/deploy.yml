@@ -1,14 +1,8 @@
-name: Deploy
+name: deploy
 on: push
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Node
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18.10
-      - run: |
-          npm install
-          npm start
+      - name: echo
+        run: echo "Initialaization"
