@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config webpack.config.js --mode production"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "html-webpack-plugin": "^5.5.0",
     "mongodb": "^4.13.0",
     "mongoose": "^6.8.1",
     "mongoose-findorcreate": "^3.0.0",
@@ -40,7 +41,10 @@
     "passport": "^0.6.0",
     "passport-github2": "^0.1.12",
     "passport-local": "^1.0.0",
-    "stringify": "^5.2.0"
+    "stringify": "^5.2.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-node-externals": "^3.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
