@@ -1,16 +1,10 @@
 name: Deploy
-on:
-  push:
-    branches:
-    - staging
-
+on: push
 jobs:
-
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Node.js
+      - name: Setup Node
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
@@ -18,17 +12,3 @@ jobs:
       - run: |
           npm install
           npm start
-
-        # env :
-
-  # deploy:
-  #   name: Deploy
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - name: executing remote ssh commands using password
-  #     uses: appleboy/ssh-action@v0.1.7
-  #     with:
-  #       host: ${{ secrets.HOST }}
-  #       username: ${{ secrets.USERNAME }}
-  #       password: ${{ secrets.PASSWORD }}
-  #       port: ${{ secrets.PORT }}
