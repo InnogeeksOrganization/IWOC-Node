@@ -265,9 +265,3 @@ router.get("/logout", (req, res, next) => {
   });
 });
 
-
-
-// function validateData(data){
-
-//   if(data.name )
-// }
