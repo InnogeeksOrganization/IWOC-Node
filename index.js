@@ -53,7 +53,6 @@ app.set('view engine', 'ejs');
 app.use(routes);
 
 // Port for running instance
-// const PORT = 6969;
 
 const PORT = process.env.PORT;
 
