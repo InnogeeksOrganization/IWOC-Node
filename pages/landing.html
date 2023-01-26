@@ -31,7 +31,6 @@
   <link rel="stylesheet" href="../public/css/speakerCard.css" />
   <link rel="stylesheet" href="../public/css/buttonDiscord.css" />
   <link rel="stylesheet" href="../public/css/prizes.css" />
-  <!-- <link rel="stylesheet" href="../public/css/example.css" /> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
 
@@ -39,6 +38,9 @@
 </head>
 
 <body>
+
+  <div id="loader"></div>
+
   <div id="particles-js"></div>
 
   <div class="mobileButton">
@@ -541,6 +543,14 @@
     <div></div>
     <div></div>
   </div>
+
+  <script>
+    var loader = document.getElementById("loader")
+
+    window.addEventListener("load", function() {
+    loader.style.display = "none"
+      })
+  </script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>

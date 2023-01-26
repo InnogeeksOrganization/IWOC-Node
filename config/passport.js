@@ -81,9 +81,6 @@ const localStrategy = new LocalStrategy(fields, verifyCallback);
 passport.use(localStrategy);
 
 
-
-
-
 // Serialize User function with session cookies
 passport.serializeUser((user, done) => {
     done(null, user.id);
