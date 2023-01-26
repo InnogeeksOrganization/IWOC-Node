@@ -176,6 +176,12 @@ router.post(
   }
 );
 
+router.get(
+  "/submit-project", (req, res) => {
+    res.redirect("https://forms.gle/zhrY8EvbFZCty1tw9");
+  }
+);
+
 router.post(
   "/register",
   async (req, res) => {
@@ -236,6 +242,12 @@ router.post("/admin-register", (req, res, next) => {
 
   res.redirect("/admin-login");
 });
+
+router.get("/maintenance", (req, res) => {
+  res.sendFile(path.join(__dirname, "../pages/maintenance.html"));
+  console.log("IWOC Maintenance Sending ",tvisits++);
+});
+
 
 module.exports = router;
 
