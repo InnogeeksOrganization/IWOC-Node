@@ -56,8 +56,8 @@ router.get(
 );
 
 router.get("/project", async (req, res, next) => {
-  const projects = await Project.find({ })
-    res.render("project", {project : projects});
+  const projects = await Project.find();
+  res.render("project", {project : projects});
 });
 
 router.get(

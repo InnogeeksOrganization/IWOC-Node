@@ -1,14 +1,14 @@
-.projectcards{
-    margin: 0 10%;
+.projectsGrid {
+    margin: 0 10% 10% 10%;
     display: grid;
     text-align: center;
     justify-content: center;
     align-items: center;
-    grid-gap: 2em;
-    grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+    grid-gap: 5em;
+    grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
 }
 
-.techstack{
+.techstack {
     display: grid;
     grid-gap: 1em;
     grid-template-columns: repeat(auto-fit, minmax(10px, 110px));
@@ -18,14 +18,14 @@
 
 }
 
-.tech{
+.tech {
     background-color: rgb(25, 26, 27);
     border-radius: 20px;
     padding: 5% 6%;
     color: rgb(255, 255, 255);
 }
 
-.maincard{
+.maincard {
     background: rgba(90, 76, 76, 0.14);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3.1px);
@@ -34,10 +34,71 @@
     padding: 1%;
 }
 
-.projecttitle{
-    color: #ffffff;
+.projecttitle {
+    /* color: #ffffff; */
+    font-weight: bold;
     text-align: center;
     margin-bottom: 10%;
-    font-size: 300%;
+    font-size: 4rem;
+    background: linear-gradient(to right, #c5dbf0, rgb(135, 178, 206));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     /* font-weight: bold; */
+}
+
+.projectCard1 {
+    width: 300px;
+    height: 400px;
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    border-radius: 30px;
+    transition: all .3s;
+}
+
+.projectCard2 {
+    z-index: 2;
+    width: 300px;
+    height: 400px;
+    background-color: #1a1a1a;
+    /* border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.456); */
+    border-radius: 20px;
+    transition: all .2s;
+    padding: 2rem 1rem 2rem 1rem;
+    position: relative;
+}
+
+.projectCard2:hover {
+    transform: scale(0.98);
+    border-radius: 30px;
+}
+
+.projectCard1:hover {
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+
+.projectCard1::before {
+    position: absolute;
+    content: "";
+    top: 10px;
+    left: 0px;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.9);
+    filter: blur(25px);
+    background: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    transition: opacity .5s;
+}
+
+.footText {
+    color: black;
+    font-family: system-ui;
+    font-size: 1rem;
+}
+
+@media only screen and (min-width:1024px){
+    .footText{
+        font-size: 1.5rem;
+    }
 }
