@@ -21,9 +21,10 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: cd staging
+          script: |
+                  cd staging
                   git pull
                   npm install
                   pm2 restart dev

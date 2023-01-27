@@ -2,24 +2,18 @@ const mongoose = require('mongoose');
 
 const ownerSchema = new mongoose.Schema({
     ownerName: String,
-    ownerEmail: String,
-    ownerPhone: String,
-    ownerLib: String,
     ownerId: String,
     ownerUsername: String,
     avatar_url: String,
-    profile_url: String
+    profile_url: String,
 });
 
 
 const projectSchema = new mongoose.Schema({
-    projectId: Number,
-    projectName: String,
-    projectDesc: String,
-    repoId: String,
-    repoName:String,
-    repoUrl:String,
-    repoDesc:String,
+    projectId: String,
+    projectName:String,
+    projectUrl:String,
+    description:String,
     language: [String],
     topic: [String],
     open_issues: Number,
