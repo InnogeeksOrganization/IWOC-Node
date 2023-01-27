@@ -27,4 +27,4 @@ jobs:
                   cd staging
                   git pull
                   npm install
-                  pm2 restart staging
+                  pm2 restart dev
