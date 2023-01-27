@@ -23,7 +23,7 @@ const sessionStore = MongoStore.create({
 
 
 // Compulsory Middlewares
-app.use('/admin',adminrouter); //Admin route
+app.use('/innogeeks/private/iovisbdoibbbibaidsbv/admin',adminrouter); //Admin route
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/public',express.static(__dirname + '/public'));    //If static files does not load try: app.use(express.static('public'));
