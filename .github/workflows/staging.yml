@@ -27,7 +27,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-                  cd staging
+                  cd iwoc
                   git pull
                   npm install
-                  pm2 restart dev
+                  pm2 restart production
