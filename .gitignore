@@ -142,3 +142,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Github Actions
+.github/workflows/deploy.yml
