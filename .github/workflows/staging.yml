@@ -2,15 +2,7 @@ name: deploy
 on:
   push:
     branches:
-<<<<<<< HEAD
-<<<<<<< HEAD:.github/workflows/staging.yml
       - staging
-=======
-      - main
->>>>>>> main:.github/workflows/production.yml
-=======
-      - staging
->>>>>>> main
 jobs:
   Build:
     runs-on: ubuntu-latest
@@ -38,8 +30,4 @@ jobs:
                   cd iwoc
                   git pull
                   npm install
-<<<<<<< HEAD
                   pm2 restart production
-=======
-                  pm2 restart production
->>>>>>> main
