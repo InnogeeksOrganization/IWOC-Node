@@ -23,7 +23,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: cd staging
+          script: |
+                  cd staging
                   git pull
                   npm install
                   pm2 restart staging
