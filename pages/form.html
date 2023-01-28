@@ -31,9 +31,6 @@
   <!-- particles.js container -->
   <div id="particles-js"></div>
 
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="../public/js/register.js"></script>
-
   <div class="dialogCard disabled" id="dialogCard">
     <div class="dialogTools" onclick="hide()">
       <div class="dialogCircle">
@@ -49,6 +46,7 @@
     <div class="card__content" id="dContent">
       <h2><strong>✔Registration Successful!</strong></h2>
       <p>Let's make this winter hot!🔥</p>
+      <input type="hidden" onclick="window.location.href='/'" id="hiddenInpurButton">
     </div>
   </div>
 
@@ -156,7 +154,10 @@
     </div>
   </div>
 
+  <script src="../public/js/particles.js"></script>
+  <script src="../public/js/particle.js"></script>
+  <script src="../public/js/register.js"></script>
+  <script src="/public/js/form.js"></script>
 </body>
-<script src="/public/js/form.js"></script>
 
 </html>

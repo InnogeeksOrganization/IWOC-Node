@@ -159,6 +159,18 @@ async function validateForm(e){
             dialog.classList.add('enabled');
 
             loader.classList.remove('load');
+
+            // console.log("status = ", data.status);
+
+            if(data.status === 200){
+                redirected()
+            }
+
+            name.value=''
+            email.value=''
+            libid.value=''
+            phone.value=''
+            git.value=''
             
           });
 
@@ -166,11 +178,17 @@ async function validateForm(e){
 
     }
 
-    console.log("Submit Clicked");
+    // console.log("Submit Clicked");
     return false;
 }
 
 function hide(){
     dialog.classList.remove('enabled');
     dialog.classList.add('disabled');
+}
+
+function redirected() {
+    setTimeout(function(){
+        document.getElementById("hiddenInpurButton").click()
+    }, 3000)
 }
