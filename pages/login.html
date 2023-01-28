@@ -26,6 +26,13 @@ margin-top: -2%;
       /* justify-content: center; */
       flex-direction: row;
     }
+
+    @media only screen and (man-width: 768px) {
+      .sideImage{
+        display: none;
+        margin-top: 25%;
+      }
+    }
   </style>
 </head>
 
@@ -45,7 +52,7 @@ margin-top: -2%;
       </div>
       <!-- </div> -->
 
-      <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
+      <div class="flex flex-col justify-center md:justify-start pt-8 md:pt-0 px-8 md:px-24 lg:px-32" style="margin-top: 25%;">
         <p class="text-center text-3xl text-white">Welcome.</p>
         <a href="/auth/github">
           <div class="flex justify-center mt-5">
@@ -69,7 +76,7 @@ margin-top: -2%;
 
     <!-- Image Section -->
     <div class="w-1/2 shadow-2xl">
-      <img class="object-cover h-screen hidden md:block" src="https://cdn.dribbble.com/users/281525/screenshots/1768570/jmanalus.gif" style="padding: 2%">
+      <img class="object-cover h-screen hidden md:block sideImage mt-5" src="../public/img/Eat .Code. Sleep. (2).gif" style="padding: 2%; height: 80%; margin-top: 7%;">
     </div>
   </div>
 
