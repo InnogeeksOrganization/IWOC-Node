@@ -27,12 +27,6 @@
     align-items: center;
     justify-content: center;
   }
-  /* anchor tag css */
-  a:hover {
-    color: transparent;
-    background-color: transparent;
-    text-decoration: underline;
-  }
 
 /* div#first  {order: 2;}
 div#winner  {order: 1;}
