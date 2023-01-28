@@ -28,7 +28,7 @@
     justify-content: center;
   }
 
-div#first  {order: 2;}
+/* div#first  {order: 2;}
 div#winner  {order: 1;}
 div#second {order: 3;}
 
@@ -36,7 +36,7 @@ div#second {order: 3;}
   div#first  {order: 1;}
   div#winner  {order: 2;}
   div#second {order: 3;}
-}
+} */
 
 .prizeheading{
   font-size: x-large;
