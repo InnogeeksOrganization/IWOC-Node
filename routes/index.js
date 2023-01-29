@@ -60,6 +60,11 @@ router.get("/project", async (req, res, next) => {
   res.render("project", {project : projects});
 });
 
+router.get("/projects", async (req, res, next) => {
+  const projects = await Project.find();
+  res.render("project", {project : projects});
+});
+
 router.get("/dashboard2", async (req, res, next) => {
   const user = await User.findById(req.session.passport.user);
   res.render("dashboard2",{ user: user });
