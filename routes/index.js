@@ -18,13 +18,25 @@ let tvisits = 0;
 // Checks if a user/ admin of the provided id exists in Mongo
 async function Exists(id) {
   const user = await User.findById(id);
+  if (user !== null)
+      return true;
 
-  if (user !== null) return true;
-
-  const admin = await Admin.findById(id);
-
-  return admin !== null;
+  return false;
+  // const admin = await Admin.findById(id);
+  // return admin !== null;
 }
+
+async function Registered(id) {
+  const user = await User.findById(id);
+  if (user.libid)
+      return true;
+
+  return false;
+  // const admin = await Admin.findById(id);
+  // return admin !== null;
+}
+
+
 
 // Checks for unauthenticated access to '/' route
 async function authManager(req, res, next) {
@@ -48,6 +60,14 @@ router.get(
     else res.redirect("/login");
   },
   async (req, res, next) => {
+    if (await Registered(req.session.passport.user))
+      next();
+    else{
+      await User.deleteOne({_id:req.session.passport.user});
+      res.redirect("/unauthenticated");
+    } 
+  },
+  async (req, res, next) => {
     const user = await User.findById(req.session.passport.user);
 
     res.render("dashboard", { user: user });
@@ -65,9 +85,8 @@ router.get("/projects", async (req, res, next) => {
   res.render("project", {project : projects});
 });
 
-router.get("/dashboard2", async (req, res, next) => {
-  const user = await User.findById(req.session.passport.user);
-  res.render("dashboard2",{ user: user });
+router.get("/unauthenticated", async (req, res, next) => {
+  res.sendFile(path.join(__dirname, "../pages/unauthenticated.html"));
 });
 
 router.get(
@@ -87,8 +106,14 @@ router.get(
   "/login",
   async (req, res, next) => {
     if (req.session.passport && (await Exists(req.session.passport.user)))
+      next();
+    else res.sendFile(path.join(__dirname, "../pages/login.html"));
+  },
+  async (req, res, next) => {
+    if (await Registered(req.session.passport.user))
       res.redirect("/dashboard");
-    else next();
+    else
+      next();
   },
   (req, res, next) => {
     res.sendFile(path.join(__dirname, "../pages/login.html"));
@@ -101,8 +126,14 @@ router.get(
   "/register",
   async (req, res, next) => {
     if (req.session.passport && (await Exists(req.session.passport.user)))
+      next();
+    else res.sendFile(path.join(__dirname, "../pages/form.html"));
+  },
+  async (req, res, next) => {
+    if (await Registered(req.session.passport.user))
       res.redirect("/dashboard");
-    else next();
+    else
+      next();
   },
   (req, res, next) => {
     res.sendFile(path.join(__dirname, "../pages/form.html"));
