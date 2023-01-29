@@ -14,6 +14,10 @@ window.onload = ()=>{
     loader = document.getElementById('wheel-and-hamster');
     // console.log(loader);
 }
+function submitForm() {
+    document.regi-form.submit();
+    document.regi-form.reset();
+    }
 
 
 
