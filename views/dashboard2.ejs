@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<% function diffColor(diff){ switch(diff){ case 'Easy' : return '#55C960' ; case 'Medium' : return '#f1730b' ;
+    case 'Hard' : return'#e00d0d'; } }%>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>IWOC Dashboard 👾 | Ayush Dubey</title>
+        <link rel="icon" type="image/x-icon" href="../public/img/iwoc_final_comp-min.png" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="../public/css/dashboard2.css" />
+    </head>
+
+    <body>
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <!-- Sidebar -->
+            <div class="sidebar flex-c flex-sb">
+                <div class="brand"><img src="../public/img/iwoc_logo_dark.png" class="mainlogo"
+                        style="height: 100%;width: 100%;" id="mainLogo"/></div>
+                <div class="side-nav">
+                    <div class="menu-item flex active">
+                        <div class="icon">
+                            <ion-icon name="grid"></ion-icon>
+                        </div>
+
+                        <p>Dashboard</p>
+                    </div>
+
+                    <div class="menu-item flex" onclick="window.open('/project','mywindow');">
+                        <div class="icon">
+                            <ion-icon name="magnet-outline"></ion-icon>
+                        </div>
+
+                        <p>Projects</p>
+                    </div>
+
+                    <div class="menu-item flex">
+                        <div class="icon">
+                            <ion-icon name="storefront-outline"></ion-icon>
+                        </div>
+
+                        <p>PR History</p>
+                    </div>
+
+                    <div class="menu-item flex">
+                        <div class="icon">
+                            <ion-icon name="heart-circle-outline"></ion-icon>
+                        </div>
+
+                        <p>Leaderboard</p>
+                    </div>
+
+                    <div class="border"></div>
+
+                    <div class="menu-item flex">
+                        <div class="icon">
+                            <ion-icon name="reader-outline"></ion-icon>
+                        </div>
+
+                        <p>My Profile</p>
+                    </div>
+
+                </div>
+
+                <div class="log-out">
+                    <div class="menu-item flex">
+                        <div class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </div>
+
+                        <p>Logout</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Sidebar -->
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- ======Topbar======= -->
+                <div class="topbar flex flex-sb">
+                    <div class="search flex" style="visibility: hidden;">
+                        <div class="icon">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </div>
+                        <input type="text" placeholder=" Search any collection" />
+                    </div>
+
+                    <div class="theme flex">
+                        <div class="dark flex">
+                            <ion-icon name="moon-outline"></ion-icon>
+                        </div>
+                        <div class="light active flex">
+                            <ion-icon name="sunny-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                    <div class="notification icon">
+                        <ion-icon name="notifications-outline"></ion-icon>
+                    </div>
+
+                    <div class="user flex flex-sb">
+                        <img style="border-radius: 20px" src="<%= user.avatarUrl %>" alt="" />
+                        <p>
+                            <%= user.name.split(' ')[0] %></p>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </div>
+            </div>
+            <!-- ======End Topbar======= -->
+
+            <!-- ======Section======= -->
+            <div class="section flex flex-sb">
+                <!-- Section Left -->
+                <div class="section-right">
+                    <div class="graph flex-c">
+                        <p>Score</p>
+                        <h2><%= user.score %></h2>
+                        <div
+                            style="width: 70%; background: rgba(196, 196, 196, 0.438); height: 2px; margin-bottom: 0.5rem; margin-top: 0.5rem;">
+                        </div>
+                        <p>Accepted PRs</p>
+                        <h2><%= user.scoresRecord.length %></h2>
+                        <!-- <img src="https://raw.githubusercontent.com/programmercloud/nft-dashboard/main/img/graph.svg"
+                            alt="" /> -->
+                    </div>
+
+                    <div class="top-creators">
+                        <div class="heading flex flex-sb">
+                            <h2>PR History</h2>
+                            <p>See all</p>
+                        </div>
+
+                        <div class="creator flex flex-sb" style="flex-direction: column; align-items: start;">
+                            <% for(let i = 0;i<Math.min(user.scoresRecord.length,5);i++) { %>
+                                <div class="follow-creator flex">
+                                    <svg fill="<%= diffColor(user.scoresRecord[i].projectDifficulty); %>" width="40px" height="40px" viewBox="0 0 512 512"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <title>ionicons-v5-d</title>
+                                        <path
+                                            d="M416,160a64,64,0,1,0-96.27,55.24c-2.29,29.08-20.08,37-75,48.42-17.76,3.68-35.93,7.45-52.71,13.93V151.39a64,64,0,1,0-64,0V360.61a64,64,0,1,0,64.42.24c2.39-18,16-24.33,65.26-34.52,27.43-5.67,55.78-11.54,79.78-26.95,29-18.58,44.53-46.78,46.36-83.89A64,64,0,0,0,416,160ZM160,64a32,32,0,1,1-32,32A32,32,0,0,1,160,64Zm0,384a32,32,0,1,1,32-32A32,32,0,0,1,160,448ZM352,192a32,32,0,1,1,32-32A32,32,0,0,1,352,192Z" />
+                                    </svg>
+                                    <div class="creator-details">
+                                        <h3 class="prTitle"><%= user.scoresRecord[i].PR_title %></h3>
+                                        <p class="prProj">@<%= user.scoresRecord[i].projectName %></p>
+                                    </div>
+                                </div>
+                            <% } %>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="section-left">
+                    <!-- ======Banner======= -->
+                    <div class="banner flex flex-sb">
+                        <div class="text">
+                            <h2>
+                                Let the contributions <br />
+                                pour in 🌧️
+                            </h2>
+
+                            <a href="/project" class="btn">Projects</a>
+                        </div>
+
+                        <img src="../public/img/ar_boy.png" alt="" />
+                    </div>
+
+                    <div class="nfts">
+                        <div class="trending heading flex flex-sb">
+                            <h2>Inside IWOC</h2>
+                            <p>See all</p>
+                        </div>
+
+                        <!-- ======Categories======= -->
+
+                        <!-- <div class="categories flex flex-sb">
+                            <div class="category flex">
+                                <div class="icon">🔥</div>
+                                <p>Trending</p>
+                            </div>
+
+                            <div class="category flex">
+                                <div class="icon">🎨</div>
+                                <p>Art</p>
+                            </div>
+
+                            <div class="category flex">
+                                <div class="icon">🕹️</div>
+                                <p>Game</p>
+                            </div>
+
+                            <div class="category flex">
+                                <div class="icon">👗</div>
+                                <p>Fashion</p>
+                            </div>
+
+                            <div class="category flex">
+                                <div class="icon">🎵</div>
+                                <p>Music</p>
+                            </div>
+                        </div> -->
+
+                        <!-- =====Browse NFT===== -->
+                        <div class="browse">
+                            <div class="nft">
+                                <div class="dates">
+                                    <div class="date">
+                                        <p class="dateTit" style="display: inline;">11th Feb</p>
+                                        <div class="times">
+                                            <div class="time">🕒 12:00 PM</div>
+                                            <div class="time2">🕒 1:00 PM</div>
+                                            <div class="time3">🕒 2:00 PM</div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="date2">
+                                        <p class="dateTit" style="display: inline;">12th Feb</p>
+                                        <div class="times">
+                                            <div class="time">🕒 12:00 PM</div>
+                                        </div>
+                                        
+                                    </div>
+                                    <!-- <div class="session">
+                                        <p style="display: inline;">11th Feb</p>
+                                        <div class="time">🕒 1:00 PM</div>
+                                    </div> -->
+                                </div>
+                                <div class="middle">
+                                    <div class="line"></div>
+                                    <div class="dot"></div>
+                                    <img src="../public/img/location.png" class="s1"/>
+                                    <img src="../public/img/location.png" class="s2"/>
+                                    <img src="../public/img/location.png" class="s3"/>
+                                    <img src="../public/img/live.png" class="s4"/>
+                                </div>
+                                <div class="sessions">
+                                    <div class="session">
+                                        <p style="display: inline;">How to be a pro contributor?</p>
+                                        <br>by Unnati Chhabra @ KIET CRPC
+                                    </div>
+                                    <div class="session">
+                                        <p style="display: inline;">Open Source and Remote Opportunities</p>
+                                        <br>by Vanshika Garg @ KIET CRPC
+                                    </div>
+                                    <div class="session">
+                                        <p style="display: inline;">Open Source with Python</p>
+                                        <br>by Kanishk Pachauri @ KIET CRPC
+                                    </div>
+                                    <div class="session">
+                                        <p style="display: inline;">APIs 101</p>
+                                        <br>by Vinit Shahdeo @ Online (Here)
+                                    </div>
+                                </div>
+                                <!-- <div class="event1">
+                                    
+                                    <img src="../public/img/location.png" style="height: 25px; width: 25px;"/>
+                                    <p class="title">How to be a pro contributor?</p><br>
+                                    <p style="margin-left: 7.5rem; font-size: 0.8em; font-weight: 400;">🕒 12:00 PM</p>
+                                </div>
+                                <div class="event1">
+                                    
+                                    <img src="../public/img/live.png" style="height: 25px; width: 25px;"/>
+                                    <div class="title" style="margin-left: 0.5rem;">How to be a pro contributor?</div>
+                                </div> -->
+
+                            </div>
+
+                            <!-- <div class="nft">
+                                <img src="https://raw.githubusercontent.com/programmercloud/nft-dashboard/main/img/nft-2.jpg"
+                                    alt="" />
+                                <div class="title">Spectrum of Color</div>
+                                <div class="details flex flex-sb">
+                                    <div class="author flex">
+                                        <img src="https://raw.githubusercontent.com/programmercloud/nft-dashboard/main/img/user.png"
+                                            alt="" />
+                                        <p>Hassnain Haider</p>
+                                    </div>
+                                    <div class="price">4 ETH</div>
+                                </div>
+                            </div>
+
+                            <div class="nft">
+                                <img src="https://raw.githubusercontent.com/programmercloud/nft-dashboard/main/img/nft-3.jpg"
+                                    alt="" />
+                                <div class="title">Vivid Artwork</div>
+                                <div class="details flex flex-sb">
+                                    <div class="author flex">
+                                        <img src="https://raw.githubusercontent.com/programmercloud/nft-dashboard/main/img/user.png"
+                                            alt="" />
+                                        <p>Hassnain Haider</p>
+                                    </div>
+                                    <div class="price">3.5 ETH</div>
+                                </div>
+                            </div>
+
+                            <div class="nft">
+                                <img src="https://raw.githubusercontent.com/programmercloud/nft-dashboard/main/img/nft-4.jpg"
+                                    alt="" />
+                                <div class="title">Nature' s Love</div>
+                                <div class="details flex flex-sb">
+                                    <div class="author flex">
+                                        <img src="https://raw.githubusercontent.com/programmercloud/nft-dashboard/main/img/user.png"
+                                            alt="" />
+                                        <p>Hassnain Haider</p>
+                                    </div>
+                                    <div class="price">5 ETH</div>
+                                </div>
+                    </div> -->
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Right -->
+
+        </div>
+        <!-- ======End Section======= -->
+        </div>
+        <!-- End Dashboard Content -->
+        </div>
+        <!-- End Dashboard -->
+
+
+        <!--   Youtube Turorial Link   -->
+        <a style="padding: 1rem;" href="https://discord.gg/Srr5PQssZ9" class="youtube" target="__blank">
+            <svg width="25px" height="25px" viewBox="0 -28.5 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+                <g>
+                    <path
+                        d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z"
+                        fill="#fff" fill-rule="nonzero">
+
+                    </path>
+                </g>
+            </svg>
+        </a>
+
+        <!-- Ion Icons Js -->
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+
+        <!-- JS -->
+        <script src="../public/js/dashboard2.js"></script>
+    </body>
+
+</html>
