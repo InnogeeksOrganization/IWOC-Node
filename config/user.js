@@ -8,30 +8,28 @@ const loginSchema = new mongoose.Schema({
     date: String
 });
 
-// Pull Request Record
-const prSchema = new mongoose.Schema({
-    PR_ID: Number,
-    PR_number: Number,
-    PR_title: String,
-    PR_labels: [String],
-    PR_url: String,
-    PR_createdAt: String,
-    PR_updatedAt: String,
-    PR_closedAt: String,
-    PR_mergedAt: String
+// Issue Record
+const issueSchema = new mongoose.Schema({
+    Issue_ID:Number,
+    Issue_number:Number,
+    Issue_title:String,
+    Issue_labels:[String],
+    Issue_difficulty:String,
+    Issue_url:String,
+    Issue_createdAt:String,
+    Issue_updatedAt:String,
+    Issue_closedAt:String
 });
 
 // Scoring Record
 const scoreSchema = new mongoose.Schema({
-    PR_ID: Number,
-    PR_title: String,
-    projectId: String,
-    projectName: String,
-    projectDifficulty: String,
-    score: Number,
-    PR: prSchema,
-    author_association: String,
-    DBdate: String
+    Issue_ID:Number,
+    projectId:String,
+    projectName:String,
+    score:Number,
+    Issue:issueSchema,
+    author_association:String,
+    DBdate:String
 }, { timestamps: true });
 
 
