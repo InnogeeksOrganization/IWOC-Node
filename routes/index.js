@@ -52,28 +52,28 @@ router.get("/", (req, res) => {
   // console.log("IWOC Landing Sending ",tvisits++);
 });
 
-router.get(
-  "/dashboard",
-  async (req, res, next) => {
-    if (req.session.passport && (await Exists(req.session.passport.user)))
-      next();
-    else res.redirect("/login");
-  },
-  async (req, res, next) => {
-    if (await Registered(req.session.passport.user))
-      next();
-    else{
-      await User.deleteOne({_id:req.session.passport.user});
-      res.redirect("/unauthenticated");
-    } 
-  },
-  async (req, res, next) => {
-    const user = await User.findById(req.session.passport.user);
+// router.get(
+//   "/dashboard",
+//   async (req, res, next) => {
+//     if (req.session.passport && (await Exists(req.session.passport.user)))
+//       next();
+//     else res.redirect("/login");
+//   },
+//   async (req, res, next) => {
+//     if (await Registered(req.session.passport.user))
+//       next();
+//     else{
+//       await User.deleteOne({_id:req.session.passport.user});
+//       res.redirect("/unauthenticated");
+//     } 
+//   },
+//   async (req, res, next) => {
+//     const user = await User.findById(req.session.passport.user);
 
-    res.render("dashboard", { user: user });
-    // console.log("Innogeeks Dashboard Sending", req.session.passport);
-  }
-);
+//     res.render("dashboard", { user: user });
+//     // console.log("Innogeeks Dashboard Sending", req.session.passport);
+//   }
+// );
 
 router.get("/project", async (req, res, next) => {
   const projects = await Project.find();
@@ -89,38 +89,38 @@ router.get("/unauthenticated", async (req, res, next) => {
   res.sendFile(path.join(__dirname, "../pages/unauthenticated.html"));
 });
 
-router.get(
-  "/profile",
-  async (req, res, next) => {
-    if (req.session.passport && (await Exists(req.session.passport.user)))
-      next();
-    else res.redirect("/login");
-  },
-  async (req, res, next) => {
-    const user = await User.findById(req.session.passport.user);
-    res.render("profile", { user: user });
-  }
-);
+// router.get(
+//   "/profile",
+//   async (req, res, next) => {
+//     if (req.session.passport && (await Exists(req.session.passport.user)))
+//       next();
+//     else res.redirect("/login");
+//   },
+//   async (req, res, next) => {
+//     const user = await User.findById(req.session.passport.user);
+//     res.render("profile", { user: user });
+//   }
+// );
 
-router.get(
-  "/login",
-  async (req, res, next) => {
-    if (req.session.passport && (await Exists(req.session.passport.user)))
-      next();
-    else res.sendFile(path.join(__dirname, "../pages/login.html"));
-  },
-  async (req, res, next) => {
-    if (await Registered(req.session.passport.user))
-      res.redirect("/dashboard");
-    else
-      next();
-  },
-  (req, res, next) => {
-    res.sendFile(path.join(__dirname, "../pages/login.html"));
-    //console.log(req.session.passport);
-    // console.log("Innogeeks Login Sending", req.session.passport);
-  }
-);
+// router.get(
+//   "/login",
+//   async (req, res, next) => {
+//     if (req.session.passport && (await Exists(req.session.passport.user)))
+//       next();
+//     else res.sendFile(path.join(__dirname, "../pages/login.html"));
+//   },
+//   async (req, res, next) => {
+//     if (await Registered(req.session.passport.user))
+//       res.redirect("/dashboard");
+//     else
+//       next();
+//   },
+//   (req, res, next) => {
+//     res.sendFile(path.join(__dirname, "../pages/login.html"));
+//     //console.log(req.session.passport);
+//     // console.log("Innogeeks Login Sending", req.session.passport);
+//   }
+// );
 
 router.get(
   "/register",
