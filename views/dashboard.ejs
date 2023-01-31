@@ -7,7 +7,8 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>IWOC Dashboard 👾 | <%= user.name %></title>
+        <title>IWOC Dashboard 👾 | <%= user.name %>
+        </title>
         <link rel="icon" type="image/x-icon" href="../public/img/iwoc_final_comp-min.png" />
         <!-- CSS -->
         <link rel="stylesheet" href="../public/css/dashboard.css" />
@@ -19,7 +20,7 @@
             <!-- Sidebar -->
             <div class="sidebar flex-c flex-sb">
                 <div class="brand"><img src="../public/img/iwoc_logo_dark.png" class="mainlogo"
-                        style="height: 100%;width: 100%;" id="mainLogo"/></div>
+                        style="height: 100%;width: 100%;" id="mainLogo" /></div>
                 <div class="side-nav">
                     <div class="menu-item flex active">
                         <div class="icon">
@@ -64,16 +65,17 @@
                     </div> -->
 
                 </div>
+                <a href="/logout" style="text-decoration: none;">
+                    <div class="log-out">
+                        <div class="menu-item flex">
+                            <div class="icon">
+                                <ion-icon name="log-out-outline"></ion-icon>
+                            </div>
 
-                <div class="log-out">
-                    <div class="menu-item flex">
-                        <div class="icon">
-                            <ion-icon name="log-out-outline"></ion-icon>
+                            <p>Logout</p>
                         </div>
-
-                        <p>Logout</p>
                     </div>
-                </div>
+                </a>
             </div>
             <!-- End Sidebar -->
 
