@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IWOC'23 by Innogeeks</title>
+  <title>IWOC '23 by Innogeeks</title>
   <link rel="icon" type="image/x-icon" href="../public/img/iwoc_final_comp-min.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -104,7 +104,12 @@
                   <a class="nav-link" href="/project">Projects</a>
                 </li>
                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                  <a class="nav-link" href="/login">Login</a>
+                  <a class="nav-link login-desk" href="/login">
+                    <button class="shadow__btn">
+                      Login
+                    </button>
+                  </a>
+                  <a class="nav-link login-mobile" href="/login">Login</a>
                 </li>
                 <!-- <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                     <a class="nav-link" href="#">Sign Up</a>
@@ -127,7 +132,7 @@
     </div>
   </div>
   <div class="timercontainer">
-    <h1 id="headline" style="font-weight: bolder">Coding begins in</h1>
+    <h1 id="headline" style="font-weight: bolder">Contribution ends in</h1>
     <div id="countdown">
       <ul>
         <li class="timerli"><span id="days"></span>Days</li>
@@ -140,17 +145,17 @@
   </div>
 
   <div class="twobuttons" style="margin-top: 5%;">
-    <button data-text="Awesome" class="discordbutton" onclick="window.location.href='/login'">
+    <button data-text="Awesome" class="discordbutton mob" onclick="window.location.href='/login'">
       <span class="actual-text">&nbsp;Login&nbsp;</span>
-      <span class="hover-text" aria-hidden="true">&nbsp;register&nbsp;</span>
+      <span class="hover-text" aria-hidden="true">&nbsp;Login&nbsp;</span>
     </button>
-    <button data-text="Awesome" class="guidebutton" onclick="window.location.href='/register'">
+    <button data-text="Awesome" class="discordbutton mob" onclick="window.location.href='/register'">
       <span class="actual-text">&nbsp;Register&nbsp;</span>
-      <span class="hover-text" aria-hidden="true">&nbsp;discord&nbsp;</span>
+      <span class="hover-text" aria-hidden="true">&nbsp;Register&nbsp;</span>
     </button>
     <button data-text="Awesome" class="guidebutton" onClick="window.open('https://discord.gg/Srr5PQssZ9');">
       <span class="actual-text">&nbsp;Discord&nbsp;</span>
-      <span class="hover-text" aria-hidden="true">&nbsp;Login&nbsp;</span>
+      <span class="hover-text" aria-hidden="true">&nbsp;Discord&nbsp;</span>
     </button>
   </div>
 
