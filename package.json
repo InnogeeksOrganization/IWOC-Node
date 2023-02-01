@@ -37,6 +37,7 @@
     "mongodb": "^4.13.0",
     "mongoose": "^6.8.1",
     "mongoose-findorcreate": "^3.0.0",
+    "node-cron": "^3.0.2",
     "octokit": "^2.0.10",
     "passport": "^0.6.0",
     "passport-github2": "^0.1.12",

@@ -4,6 +4,8 @@ const passport = require("passport");
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
 const adminrouter = require('./routes/app.router');
+var cron = require("node-cron");
+const track = require('./tracker/tracker');
 require('dotenv').config();
 
 require('./config/passport')
@@ -63,4 +65,11 @@ app.listen(PORT , (err) => {
   }else{
     console.log(`app is listening to port ` + PORT);
   }
+});
+
+// cronjob for tracking
+
+cron.schedule("* * * * *", () => {
+  console.log("running a task every minute")
+  track();
 });

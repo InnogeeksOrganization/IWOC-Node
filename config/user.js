@@ -1,14 +1,10 @@
-// Schema and Model for User
-
 const mongoose = require('mongoose');
 
-// Login Record
 const loginSchema = new mongoose.Schema({
     sessionid: String,
     date: String
 });
 
-// Issue Record
 const issueSchema = new mongoose.Schema({
     Issue_ID:Number,
     Issue_number:Number,
@@ -21,7 +17,6 @@ const issueSchema = new mongoose.Schema({
     Issue_closedAt:String
 });
 
-// Scoring Record
 const scoreSchema = new mongoose.Schema({
     Issue_ID:Number,
     projectId:String,
@@ -30,7 +25,7 @@ const scoreSchema = new mongoose.Schema({
     Issue:issueSchema,
     author_association:String,
     DBdate:String
-}, { timestamps: true });
+},{timestamps: true});
 
 
 const userSchema = new mongoose.Schema({
@@ -39,28 +34,28 @@ const userSchema = new mongoose.Schema({
     libid: String,
     phone: String,
     userid: String,
-    displayname: String,
-    username: String,
-    score: {
-        type: Number,
-        default: 0
+    displayname:String,
+    username:String,
+    score:{
+        type:Number,
+        default:0
     },
     scoresRecord: {
-        type: [scoreSchema],
+        type:[scoreSchema],
         default: []
     },
-    profileUrl: String,
-    avatarUrl: String,
-    gitEmail: String,
-    bio: String,
-    blog: String,
-    publicRepo: Number,
-    followers: Number,
-    following: Number,
+    profileUrl:String,
+    avatarUrl:String,
+    gitEmail:String,
+    bio:String,
+    blog:String,
+    publicRepo:Number,
+    followers:Number,
+    following:Number,
     sessions: [loginSchema],
-}, { timestamps: true });
+},{timestamps:true});
 
 
-const User = new mongoose.model('User', userSchema);
+const User = new mongoose.model('User',userSchema);
 
 module.exports = User;
