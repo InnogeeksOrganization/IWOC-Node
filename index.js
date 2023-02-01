@@ -70,6 +70,5 @@ app.listen(PORT , (err) => {
 // cronjob for tracking
 
 cron.schedule("* * * * *", () => {
-  console.log("running a task every minute")
   track();
 });

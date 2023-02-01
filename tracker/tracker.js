@@ -15,7 +15,6 @@ async function fetchAndAddProject(link) {
   for (let topic of resp.data.topics) {
     tc.push(topic);
   }
-  console.log(tc);
   await Project.create({
     projectId: resp.data.id,
     projectName: resp.data.name,
@@ -45,8 +44,6 @@ async function fetchAndAddProject(link) {
   });
 
   const projects = await Project.find();
-
-  console.log(projects);
 }
 
 function getDifficultyScore(difficulty) {
@@ -76,7 +73,6 @@ async function addProjects(data) {
 module.exports = async function (track) {
     const d = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
     fs.appendFileSync("logs/track.log", `Tracked at ${d} \n`);
-
     const projects = await Project.find();
 
     for (let project of projects) {
@@ -135,8 +131,6 @@ module.exports = async function (track) {
 
                   if (difficulty !== "NA") {
                     user.score += diffScore;
-
-                    console.log(issue);
                     user.scoresRecord.push({
                       Issue_ID: issue.id,
                       projectId: project.projectId,
