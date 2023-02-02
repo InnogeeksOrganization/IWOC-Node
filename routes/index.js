@@ -9,6 +9,7 @@ const User = require("../config/user");
 const ProjectHandler = require("../config/ProjectHandler");
 const UserHandler = require("../config/UserHandler");
 const Project = require("../config/project")
+const event = require("../config/event")
 
 
 const router = express.Router();
@@ -141,6 +142,10 @@ router.get(
   }
 );
 
+router.get("/eventRegistration", (req, res) => {
+  res.sendFile(path.join(__dirname, "../pages/event_registration.html"));
+})
+
 // 'Github Oauth' routes for PassportJS github strategy and verification callbacks.
 
 router.get(
@@ -182,7 +187,6 @@ router.get(
   },
   (req, res, next) => {
     res.sendFile(path.join(__dirname, "../pages/admin-login.html"));
-    // console.log("Innogeeks Admin Login Sending", req.session.passport);
   }
 );
 
@@ -195,7 +199,6 @@ router.get(
   },
   (req, res, next) => {
     res.sendFile(path.join(__dirname, "../pages/admin-register.html"));
-    // console.log("Innogeeks Admin Register Sending", req.session.passport);
   }
 );
 
@@ -210,14 +213,7 @@ router.post(
 router.post(
   "/register-project",
   async (req, res, next) => {
-    // console.log(req.body);
     await ProjectHandler.addProject(req.body);
-
-    // if(validateData(req.body)){
-    //   await addProject(req.body);
-    //   next();
-    // }
-    // else
 
   }, (req, res) => {
     res.send("Done");
@@ -233,10 +229,39 @@ router.get(
 router.post(
   "/register",
   async (req, res) => {
-    // console.log(req.body);
     if(validateData(req.body)){
       const resp = await UserHandler.addUser(req.body);
       res.send(JSON.stringify(resp));
+    }
+    else{
+      const resp = {message: "Invalid Data"};
+      res.send(JSON.stringify(resp));
+    } 
+  }
+);
+
+router.post(
+  "/eventRegister",
+  async (req, res) => {
+    if(validateData(req.body)){
+      const allUsers = await event.find();
+      if(allUsers.find(user => user.libid === req.body.libid)){
+        resp = {
+          status: 409,
+          id: 3,
+          title: "❌ Library ID Already Exists",
+          message: "You have already registered"
+      }
+        return res.send(JSON.stringify(resp));
+      }
+      await event.create(req.body)
+      resp = {
+        status: 200,
+        id: 1,
+        title: "✔Registration Successfull!",
+        message: "Let's make this winter hot!🔥"
+    }
+      return res.send(JSON.stringify(resp));
     }
     else{
       const resp = {message: "Invalid Data"};
@@ -273,7 +298,6 @@ async function validateData(data) {
 }
 
 router.post("/admin-register", (req, res, next) => {
-  // console.log(req.body);
 
   const hash = bcrypt.hashSync(req.body.password, 10);
 
@@ -285,7 +309,6 @@ router.post("/admin-register", (req, res, next) => {
   });
 
   newAdmin.save().then((user) => {
-    // console.log(user);
   });
 
   res.redirect("/admin-login");
