@@ -249,7 +249,25 @@ router.post(
         resp = {
           status: 409,
           id: 3,
-          title: "❌ Library ID Already Exists",
+          title: `❌ Library ID "${req.body.libid}" Already Exists`,
+          message: "You have already registered"
+      }
+        return res.send(JSON.stringify(resp));
+      }
+      if(allUsers.find(user => user.email === req.body.email)){
+        resp = {
+          status: 409,
+          id: 3,
+          title: `❌ Email "${req.body.email}" Already Exists`,
+          message: "You have already registered"
+      }
+        return res.send(JSON.stringify(resp));
+      }
+      if(allUsers.find(user => user.phone === req.body.phone)){
+        resp = {
+          status: 409,
+          id: 3,
+          title: `❌ Phone number "${req.body.phone}" Already Exists`,
           message: "You have already registered"
       }
         return res.send(JSON.stringify(resp));
