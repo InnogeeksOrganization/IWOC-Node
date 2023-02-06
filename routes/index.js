@@ -347,3 +347,7 @@ router.get("/logout", (req, res, next) => {
   });
 });
 
+router.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../pages/404.html"));
+})
+
