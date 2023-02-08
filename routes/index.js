@@ -146,6 +146,31 @@ router.get("/eventRegistration", (req, res) => {
   res.sendFile(path.join(__dirname, "../pages/event_registration.html"));
 })
 
+router.get(
+  "/dashboard/leaderboard",
+  async (req, res, next) => {
+    if (req.session.passport && (await Exists(req.session.passport.user)))
+      next();
+    else res.redirect("/login");
+  },
+  async (req, res, next) => {
+    if (await Registered(req.session.passport.user))
+      next();
+    else{
+      await User.deleteOne({_id:req.session.passport.user});
+      res.redirect("/unauthenticated");
+    } 
+  },
+  async (req, res, next) => {
+    const user = await User.findById(req.session.passport.user);
+    const users = await User.find();
+    await users.sort(function(a, b){return b.score - a.score});
+    const rank = users.map(e => e.username).indexOf(user.username) + 1;
+    res.render("leaderboard", { user: user,users: users, rank:rank});
+    // console.log("Innogeeks Dashboard Sending", req.session.passport);
+  }
+);
+
 // 'Github Oauth' routes for PassportJS github strategy and verification callbacks.
 
 router.get(
