@@ -7,6 +7,7 @@ window.onload = ()=>{
     email = document.getElementById('email');
     phone = document.getElementById('phone');
     libid = document.getElementById('libid');
+    residence = document.getElementById('Residence')
     dialog = document.getElementById('dialogCard');
     dialogCross = document.getElementById('cross');
     loader = document.getElementById('wheel-and-hamster');
@@ -23,6 +24,7 @@ async function validateForm(e){
     const email_val = email.value.trim();
     const phone_val = phone.value.trim();
     const libid_val = libid.value.trim();
+    const residence_val = residence.value.trim();
 
 
     var valid = true;
@@ -77,6 +79,21 @@ async function validateForm(e){
     inputControl = phone.parentElement;
     errorDisplay = inputControl.querySelector('.error');
 
+    if(valid && (residence_val == '' || residence_val==null)){
+        valid=false;
+        errorDisplay.innerText = 'Enter a valid Residence';
+        inputControl.classList.add('error');
+        inputControl.classList.remove('success');
+    }
+    else if(valid){
+        errorDisplay.innerText = '';
+    }
+
+
+
+    inputControl = phone.parentElement;
+    errorDisplay = inputControl.querySelector('.error');
+
     regExp = /[a-zA-Z]/g;
 
     if(valid && (phone_val == '' || phone_val==null || regExp.test(phone_val) || phone_val.length != 10)){
@@ -95,6 +112,7 @@ async function validateForm(e){
             email: email_val,
             libid: libid_val,
             phone: phone_val,
+            residence: residence_val,
         }
         await fetch("/eventRegister", {
             method: 'POST',
@@ -123,6 +141,7 @@ async function validateForm(e){
             email.value=''
             libid.value=''
             phone.value=''
+            residence.value=''
           });
     }
     return false;

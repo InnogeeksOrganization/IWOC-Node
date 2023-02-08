@@ -7,6 +7,7 @@ const eventRegistration = new mongoose.Schema({
     phone : String,
     phone : String,
     libid: String,
+    residence: String,
     eventName: {type: String, default:"11feb"}
 })
 
