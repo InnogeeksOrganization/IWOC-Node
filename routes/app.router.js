@@ -4,6 +4,7 @@ const AdminBroMongoose = require("@admin-bro/mongoose");
 const mongoose = require("mongoose");
 const project = require("../config/project");
 const user = require("../config/user");
+const eventregistrations = require("../config/event");
 const admins = require("../config/admins");
 
 AdminBro.registerAdapter(AdminBroMongoose);
@@ -35,6 +36,21 @@ const AdminBroOptions = {
     },
     {
         resource: user,
+        options: {
+          properties: {
+            ownerId: {
+              isVisible: { edit: false, show: true, list: true, filter: true },
+            },
+          },
+          actions: {
+            edit: { isAccessible: canEditEmp },
+            delete: { isAccessible: canEditEmp },
+            new: { isAccessible: canEditEmp },
+          },
+        },
+      },
+      {
+        resource: eventregistrations,
         options: {
           properties: {
             ownerId: {
