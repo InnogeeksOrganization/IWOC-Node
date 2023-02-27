@@ -162,11 +162,18 @@ router.get(
     } 
   },
   async (req, res, next) => {
-    const user = await User.findById(req.session.passport.user);
+    const user_t = await User.findById(req.session.passport.user);
     const users = await User.find();
     await users.sort(function(a, b){return b.score - a.score});
-    const rank = users.map(e => e.username).indexOf(user.username) + 1;
-    res.render("leaderboard", { user: user,users: users, rank:rank});
+    const rank = users.map(e => e.username).indexOf(user_t.username) + 1;
+    if(req.query.user){
+      const user = await User.findOne({username:req.query.user});
+      res.render("history", { user_t:user_t,user: user,rank:rank });
+    }
+    else{ 
+      res.render("leaderboard", { user: user_t,users: users, rank:rank});
+    }
+    
     // console.log("Innogeeks Dashboard Sending", req.session.passport);
   }
 );

@@ -7,7 +7,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>IWOC Dashboard 👾 | <%= user.name %>
+        <title>IWOC Dashboard 👾 | <%= user_t.name %>
         </title>
         <link rel="icon" type="image/x-icon" href="../public/img/iwoc_final_comp-min.png" />
         <!-- CSS -->
@@ -141,9 +141,9 @@
                     </div> -->
 
                     <div class="user flex flex-sb">
-                        <img style="border-radius: 20px" src="<%= user.avatarUrl %>" alt="" />
+                        <img style="border-radius: 20px" src="<%= user_t.avatarUrl %>" alt="" />
                         <p>
-                            <%= user.name.split(' ')[0] %></p>
+                            <%= user_t.name.split(' ')[0] %></p>
                     <ion-icon name="chevron-down-outline"></ion-icon>
                 </div>
             </div>
@@ -192,18 +192,20 @@
                                 <table id="table" class="table table-hover table-mc-light-blue">
                                     <thead>
                                         <tr>
-                                            <th>Rank</th>
-                                            <th>Name</th>
+                                            <th>Sr.No.</th>
+                                            <th>Title</th>
+                                            <th>Project</th>
                                             <th>Score</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <% let i = 1 %>
-                                        <% for(let u of users){ %>
-                                            <tr onclick="window.open('?user=<%= u.username %>')" style="cursor: pointer;">
-                                                <td data-title="Rank"><%= i++ %></td>
-                                                <td data-title="Name"><%= u.name %></td>
-                                                <td data-title="Score"><%= u.score %></td>
+                                        <% for(let s of user.scoresRecord){ %>
+                                            <tr onclick="window.open('<%= s.Issue.Issue_url %>')" style="cursor: pointer;">
+                                                <td data-title="Sr.No."><%= i++ %></td>
+                                                <td data-title="Title"><%= s.Issue.Issue_title %></td>
+                                                <td data-title="Project"><%= s.projectName %></td>
+                                                <td data-title="Score"><%= s.score %></td>
                                             </tr>
                                         <% } %>
                                     </tbody>
