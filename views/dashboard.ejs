@@ -15,6 +15,34 @@
     </head>
 
     <body>
+        <div class="bottombar flex-c flex-sb">
+            <div class="bottom-nav">
+                <div class="menu-item flex active m0" style="display: inline-block;" onclick="location.href='/dashboard';location.reload();">
+                    <div class="icon">
+                        <ion-icon name="grid"></ion-icon>
+                    </div>
+
+                    <p>Dashboard</p>
+                </div>
+
+                <div class="menu-item flex m0" style="display: inline-block;" onclick="location.reload();location.href='/dashboard/leaderboard';">
+                    <div class="icon">
+                        <ion-icon name="trophy-outline"></ion-icon>
+                    </div>
+
+                    <p>Leaderboard</p>
+                </div>
+
+                <div class="menu-item flex m0" style="display: inline-block;" onclick="window.open('/project','mywindow');">
+                    <div class="icon">
+                        <ion-icon name="magnet-outline"></ion-icon>
+                    </div>
+
+                    <p>Projects</p>
+                </div>
+
+            </div>
+        </div>
         <!-- Dashboard -->
         <div class="dashboard">
             <!-- Sidebar -->
@@ -22,12 +50,20 @@
                 <div class="brand"><img src="../public/img/iwoc_logo_dark.png" class="mainlogo"
                         style="height: 100%;width: 100%;" id="mainLogo" /></div>
                 <div class="side-nav">
-                    <div class="menu-item flex active">
+                    <div class="menu-item flex active" onclick="location.href='/dashboard';location.reload();">
                         <div class="icon">
                             <ion-icon name="grid"></ion-icon>
                         </div>
 
                         <p>Dashboard</p>
+                    </div>
+
+                    <div class="menu-item flex" onclick="location.reload();location.href='/dashboard/leaderboard';">
+                        <div class="icon">
+                            <ion-icon name="trophy-outline"></ion-icon>
+                        </div>
+
+                        <p>Leaderboard</p>
                     </div>
 
                     <div class="menu-item flex" onclick="window.open('/project','mywindow');">
@@ -77,6 +113,7 @@
                     </div>
                 </a>
             </div>
+
             <!-- End Sidebar -->
 
             <!-- Dashboard Content -->

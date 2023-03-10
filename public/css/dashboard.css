@@ -42,6 +42,13 @@ body {
   flex-direction: column;
 }
 
+.flex-r {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
 .flex-sb {
   justify-content: space-between;
 }
@@ -68,8 +75,25 @@ body {
   transition: background 0.5s ease-out;
 }
 
+.bottombar{
+  z-index: 10;
+  width: 100%;
+  display: none;
+  flex: 0 0 20%;
+  font-size: 22px;
+  background: #fff;
+  transition: background 0.5s ease-out;
+  position: fixed;
+  bottom: 0;
+}
+
 .side-nav {
   flex: 0 0 75%;
+}
+.bottom-nav {
+  display: flex;
+  flex: 0 0 75%;
+  width: 100%;
 }
 
 .brand {
@@ -434,7 +458,8 @@ body {
   box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.22);
 }
 
-.darkMode .sidebar {
+.darkMode .sidebar,
+.darkMode .bottombar {
   background: #161622;
 }
 
@@ -689,11 +714,34 @@ body {
   }
 }
 
+.discord {
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+  text-decoration: none;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  box-shadow: 0 2px 2px 3px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.discord p {
+  font-size: 22px;
+}
+
 @media (max-width: 640px) {
   .sidebar {
     display: none;
   }
 
+  .bottombar {
+    display: flex;
+  }
+
+  .discord{
+    bottom: 10vh;
+  }
   .user {
     margin-right: 10px;
   }
@@ -774,21 +822,7 @@ body {
 /* YT LINK */
 
 
-.discord {
-  position: fixed;
-  bottom: 5vh;
-  right: 5vw;
-  text-decoration: none;
-  padding: 8px 12px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 6px;
-  box-shadow: 0 2px 2px 3px rgba(0, 0, 0, 0.2);
-  color: #fff;
-}
 
-.discord p {
-  font-size: 22px;
-}
 
 .line {
   margin-top: 10px;
@@ -967,4 +1001,8 @@ body {
   .s4 {
     top: 13.5rem;
   }
+}
+
+.m0 {
+  margin: 17px auto;
 }

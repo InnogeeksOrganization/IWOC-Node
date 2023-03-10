@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<% function diffColor(diff){ switch(diff){ case 'Easy' : return '#55C960' ; case 'Medium' : return '#f1730b' ;
+    case 'Hard' : return'#e00d0d'; } }%>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>IWOC Dashboard 👾 | <%= user_t.name %>
+        </title>
+        <link rel="icon" type="image/x-icon" href="../public/img/iwoc_final_comp-min.png" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="../public/css/leaderboard.css" />
+    </head>
+
+    <body>
+        <div class="bottombar flex-c flex-sb">
+            <div class="bottom-nav">
+                <div class="menu-item flex m0" onclick="location.reload();location.href='/dashboard';">
+                    <div class="icon">
+                        <ion-icon name="grid"></ion-icon>
+                    </div>
+
+                    <p>Dashboard</p>
+                </div>
+
+                <div class="menu-item flex active m0" onclick="location.href='/dashboard/leaderboard';location.reload();">
+                    <div class="icon">
+                        <ion-icon name="trophy-outline"></ion-icon>
+                    </div>
+
+                    <p>Leaderboard</p>
+                </div>
+
+                <div class="menu-item flex m0" onclick="window.open('/project','mywindow');">
+                    <div class="icon">
+                        <ion-icon name="magnet-outline"></ion-icon>
+                    </div>
+
+                    <p>Projects</p>
+                </div>
+            </div>
+        </div>
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <!-- Sidebar -->
+            <div class="sidebar flex-c flex-sb">
+                <div class="sides">
+                    <div class="brand"><img src="../public/img/iwoc_logo_dark.png" class="mainlogo"
+                        style="height: 100%;width: 100%;" id="mainLogo" /></div>
+                    <div class="side-nav">
+                        <div class="menu-item flex" onclick="location.reload();location.href='/dashboard';">
+                            <div class="icon">
+                                <ion-icon name="grid"></ion-icon>
+                            </div>
+
+                            <p>Dashboard</p>
+                        </div>
+
+                        <div class="menu-item flex active" onclick="location.href='/dashboard/leaderboard';location.reload();">
+                            <div class="icon">
+                                <ion-icon name="trophy-outline"></ion-icon>
+                            </div>
+    
+                            <p>Leaderboard</p>
+                        </div>
+
+                        <div class="menu-item flex" onclick="window.open('/project','mywindow');">
+                            <div class="icon">
+                                <ion-icon name="magnet-outline"></ion-icon>
+                            </div>
+
+                            <p>Projects</p>
+                        </div>
+
+                        <!-- <div class="menu-item flex">
+                            <div class="icon">
+                                <ion-icon name="storefront-outline"></ion-icon>
+                            </div>
+
+                            <p>PR History</p>
+                        </div>
+
+                        <div class="menu-item flex">
+                            <div class="icon">
+                                <ion-icon name="heart-circle-outline"></ion-icon>
+                            </div>
+
+                            <p>Leaderboard</p>
+                        </div> -->
+
+                        <!-- <div class="border"></div>
+
+                        <div class="menu-item flex">
+                            <div class="icon">
+                                <ion-icon name="reader-outline"></ion-icon>
+                            </div>
+
+                            <p>My Profile</p>
+                        </div> -->
+
+                    </div>
+                    <a href="/logout" style="text-decoration: none;">
+                        <div class="log-out">
+                            <div class="menu-item flex">
+                                <div class="icon">
+                                    <ion-icon name="log-out-outline"></ion-icon>
+                                </div>
+
+                                <p>Logout</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- End Sidebar -->
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- ======Topbar======= -->
+                <div class="topbar flex flex-sb">
+                    <div class="search flex" style="visibility: hidden;">
+                        <div class="icon">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </div>
+                        <input type="text" placeholder=" Search any collection" />
+                    </div>
+
+                    <div class="theme flex">
+                        <div class="dark flex">
+                            <ion-icon name="moon-outline"></ion-icon>
+                        </div>
+                        <div class="light active flex">
+                            <ion-icon name="sunny-outline"></ion-icon>
+                        </div>
+                    </div>
+
+                    <!-- <div class="notification icon">
+                        <ion-icon name="notifications-outline"></ion-icon>
+                    </div> -->
+
+                    <div class="user flex flex-sb">
+                        <img style="border-radius: 20px" src="<%= user_t.avatarUrl %>" alt="" />
+                        <p>
+                            <%= user_t.name.split(' ')[0] %></p>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </div>
+            </div>
+            <!-- ======End Topbar======= -->
+
+            <!-- ======Section======= -->
+            <div class="section flex flex-sb">
+                <!-- Section Left -->
+                <div id="demo">
+                    <!-- Responsive table starts here -->
+                    <!-- For correct display on small screens you must add ' data-title' to each 'td' in your table
+                            -->
+                        <div class="table-responsive-vertical shadow-z-1 corner">
+                            <!-- Table starts here -->
+                            <table id="table" class="table table-hover table-mc-light-blue">
+                                <tbody>
+                                    <tr>
+                                        <td data-title="Rank" style="color: black;"><%= rank %></td>
+                                        <td data-title="Name" style="color: black;"><%= user.name %></td>
+                                        <td data-title="Score" style="color: black;"><%= user.score %></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <!-- <div class="section-right">
+                    <div class="graph flex-c">
+                        <p>Score</p>
+                        <h2><%= user.score %></h2>
+                        <div
+                            style="width: 70%; background: rgba(196, 196, 196, 0.438); height: 2px; margin-bottom: 0.5rem; margin-top: 0.5rem;">
+                        </div>
+                        <p>Accepted PRs</p>
+                        <h2><%= user.scoresRecord.length %></h2>
+                        <img src="https://raw.githubusercontent.com/programmercloud/nft-dashboard/main/img/graph.svg"
+                            alt="" />
+                    </div>
+                </div> -->
+                <div class="section-right">
+                    <div id="demo" style="padding-bottom: 50px;">
+                        <!-- Responsive table starts here -->
+                        <!-- For correct display on small screens you must add ' data-title' to each 'td' in your table
+                                -->
+                            <div class="table-responsive-vertical shadow-z-1 corner">
+                                <!-- Table starts here -->
+                                <table id="table" class="table table-hover table-mc-light-blue">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr.No.</th>
+                                            <th>Title</th>
+                                            <th>Project</th>
+                                            <th>Score</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% let i = 1 %>
+                                        <% for(let s of user.scoresRecord){ %>
+                                            <tr onclick="window.open('<%= s.Issue.Issue_url %>')" style="cursor: pointer;">
+                                                <td data-title="Sr.No."><%= i++ %></td>
+                                                <td data-title="Title"><%= s.Issue.Issue_title %></td>
+                                                <td data-title="Project"><%= s.projectName %></td>
+                                                <td data-title="Score"><%= s.score %></td>
+                                            </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>
+                </div>
+
+                <!-- Section Right -->
+
+            </div>
+            <!-- ======End Section======= -->
+        </div>
+        <!-- End Dashboard Content -->
+        </div>
+        <!-- End Dashboard -->
+
+
+        <!--   Youtube Turorial Link   -->
+        <a style="padding: 1rem;" href="https://discord.gg/Srr5PQssZ9" class="discord" target="__blank">
+            <svg width="25px" height="25px" viewBox="0 -28.5 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+                <g>
+                    <path
+                        d="M216.856339,16.5966031 C200.285002,8.84328665 182.566144,3.2084988 164.041564,0 C161.766523,4.11318106 159.108624,9.64549908 157.276099,14.0464379 C137.583995,11.0849896 118.072967,11.0849896 98.7430163,14.0464379 C96.9108417,9.64549908 94.1925838,4.11318106 91.8971895,0 C73.3526068,3.2084988 55.6133949,8.86399117 39.0420583,16.6376612 C5.61752293,67.146514 -3.4433191,116.400813 1.08711069,164.955721 C23.2560196,181.510915 44.7403634,191.567697 65.8621325,198.148576 C71.0772151,190.971126 75.7283628,183.341335 79.7352139,175.300261 C72.104019,172.400575 64.7949724,168.822202 57.8887866,164.667963 C59.7209612,163.310589 61.5131304,161.891452 63.2445898,160.431257 C105.36741,180.133187 151.134928,180.133187 192.754523,160.431257 C194.506336,161.891452 196.298154,163.310589 198.110326,164.667963 C191.183787,168.842556 183.854737,172.420929 176.223542,175.320965 C180.230393,183.341335 184.861538,190.991831 190.096624,198.16893 C211.238746,191.588051 232.743023,181.531619 254.911949,164.955721 C260.227747,108.668201 245.831087,59.8662432 216.856339,16.5966031 Z M85.4738752,135.09489 C72.8290281,135.09489 62.4592217,123.290155 62.4592217,108.914901 C62.4592217,94.5396472 72.607595,82.7145587 85.4738752,82.7145587 C98.3405064,82.7145587 108.709962,94.5189427 108.488529,108.914901 C108.508531,123.290155 98.3405064,135.09489 85.4738752,135.09489 Z M170.525237,135.09489 C157.88039,135.09489 147.510584,123.290155 147.510584,108.914901 C147.510584,94.5396472 157.658606,82.7145587 170.525237,82.7145587 C183.391518,82.7145587 193.761324,94.5189427 193.539891,108.914901 C193.539891,123.290155 183.391518,135.09489 170.525237,135.09489 Z"
+                        fill="#fff" fill-rule="nonzero">
+
+                    </path>
+                </g>
+            </svg>
+        </a>
+
+        <!-- Ion Icons Js -->
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+
+        <!-- JS -->
+        <script src="../public/js/dashboard2.js"></script>
+    </body>
+
+</html>

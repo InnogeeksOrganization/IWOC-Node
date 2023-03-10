@@ -8,7 +8,7 @@ const eventRegistration = new mongoose.Schema({
     phone : String,
     libid: String,
     residence: String,
-    eventName: {type: String, default:"11feb"}
+    eventName: {type: String, default:"18feb"}
 })
 
 const event = new mongoose.model('Event', eventRegistration);
