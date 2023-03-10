@@ -10,6 +10,7 @@ const ProjectHandler = require("../config/ProjectHandler");
 const UserHandler = require("../config/UserHandler");
 const Project = require("../config/project")
 const event = require("../config/event")
+const PDFdocument = require('pdfkit');
 
 
 const router = express.Router();
@@ -369,8 +370,27 @@ router.get("/maintenance", (req, res) => {
   console.log("IWOC Maintenance Sending ",tvisits++);
 });
 
+function buildPDF(dataCallback, endCallback) {
+  const doc = new PDFdocument();
+  doc.on('data', dataCallback)
+  doc.on('end', endCallback)
+  doc.fontSize(25).text("this is your certificate", 500, 100);
+  doc.end();
+}
 
-module.exports = router;
+router.get("/download",
+  async (req, res, next) => {
+  const stream = res.writeHead(200, {
+    'Content-Type' : "application/pdf",
+    'Content-Disposition' : "attachment;filename=certificate.pdf"
+  });
+
+  buildPDF(
+    (chunk) => stream.write(chunk),
+    () => stream.end()
+  )
+})
+
 
 router.get("/logout", (req, res, next) => {
   req.logout(function (err) {
@@ -383,3 +403,5 @@ router.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../pages/404.html"));
 })
 
+
+module.exports = router;

@@ -95,4 +95,3 @@ async function enterUser(data){
 }
 
 module.exports = { addUser };
-
