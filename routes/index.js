@@ -376,8 +376,8 @@ async function createPDF(name) {
   return document;
 }
 
-router.get("/certi", async (req, res) => {
-  let name = "Anvansh";
+router.post("/certi", async (req, res) => {
+  let name = req.body.name;
   res.setHeader(
     "Content-disposition",
     "attachment; filename=certificate_iwoc.pdf"
