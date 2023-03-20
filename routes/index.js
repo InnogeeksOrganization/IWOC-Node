@@ -64,7 +64,7 @@ router.get(
   async (req, res, next) => {
     const user = await User.findById(req.session.passport.user);
 
-    res.render("dashboard", { user: user });
+    res.render("dashboard", { user: user , username: user.name });
     // console.log("Innogeeks Dashboard Sending", req.session.passport);
   }
 );
@@ -377,7 +377,7 @@ async function createPDF(name) {
 }
 
 router.post("/certi", async (req, res) => {
-  let name = req.body.name;
+  let name = req.query.name;
   res.setHeader(
     "Content-disposition",
     "attachment; filename=certificate_iwoc.pdf"
