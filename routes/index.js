@@ -367,10 +367,10 @@ async function createPDF(name) {
   const courierBoldFont = await document.embedFont(StandardFonts.Courier);
   const firstPage = document.getPage(0);
 
-  firstPage.moveTo(72, 500);
-  firstPage.drawText(`This certifies that ${name} has successfully completed the course.`, {
+  firstPage.moveTo(305, 325);
+  firstPage.drawText(`${name}`, {
     font: courierBoldFont,
-    size: 20,
+    size: 30,
   });
 
   return document;
@@ -386,7 +386,6 @@ router.post("/certi", async (req, res) => {
   try {
     let generated = await createPDF(name);
     const pdfBytes = await generated.save();
-    // console.log(pdfBytes)
     res.end(pdfBytes);
   } catch (err) {
     console.log(err);
