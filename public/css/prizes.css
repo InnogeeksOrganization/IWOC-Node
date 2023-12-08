@@ -22,12 +22,20 @@
   }
 
   .prize{
-    display: flex;
+     display: flex;
+/*
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
   }
-
+  .prize-pool{
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+  .prize-container{
+    
+  }
 /* div#first  {order: 2;}
 div#winner  {order: 1;}
 div#second {order: 3;}

@@ -4,6 +4,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 :root {
   --bs-blue: #63B3ED;
   --bs-indigo: #596CFF;
@@ -24967,4 +24968,6 @@ pre[class*="language-"] {
   }
 }
 
-/*# sourceMappingURL=dashboard-free.css.map */
+.login-img{
+  background-size: contain;
+}

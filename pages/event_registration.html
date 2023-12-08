@@ -20,10 +20,128 @@
   }
 
   body {
+    height: 120vh;
     position: relative;
     /* width: 100%; */
     background-color: #111827;
   }
+  .btn-53,
+.btn-53 *,
+.btn-53 :after,
+.btn-53 :before,
+.btn-53:after,
+.btn-53:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-53 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: rgb(59 130 246 / 0.5); 
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+
+.btn-53:disabled {
+  cursor: default;
+}
+
+.btn-53:-moz-focusring {
+  outline: auto;
+}
+
+.btn-53 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-53 [hidden] {
+  display: none;
+}
+
+.btn-53 {
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-53 .original {
+  background:transparent;
+  color: white;
+  display: grid;
+  inset: 0;
+  place-content: center;
+  position: absolute;
+  transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.btn-53:hover .original {
+  transform: translateY(100%);
+}
+
+.btn-53 .letters {
+  display: inline-flex;
+}
+
+.btn-53 span {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.2s;
+}
+
+.btn-53 span:nth-child(2n) {
+  transform: translateY(15px);
+}
+
+.btn-53:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-53:hover span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.btn-53:hover span:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.btn-53:hover span:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.btn-53:hover span:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+.btn-53:hover span:nth-child(6) {
+  transition-delay: 0.5s;
+}
+.btn-53:hover span:nth-child(7) {
+  transition-delay: 0.6s;
+}
+.btn-53:hover span:nth-child(8) {
+  transition-delay: 0.7s;
+}
+select option {
+  background-color: rgba(74, 144, 255, 0.571); 
+  color: black; 
+}
 </style>
 
 <body>
@@ -125,7 +243,7 @@
                 <div class="relative z-0">
                   <div class="error"></div>
                   <select id="Residence" name="Residence"
-                    class="block py-2.5 px-0 w-full text-lg bg-transparent border-0 border-b-2 border-white appearance-none text-blue-200 dark:border-gray-600 dark:focus:border-blue-200 focus:outline-none focus:ring-0 focus:border-blue-200 peer" />
+                    class="block py-2.5 px-0 w-full text-lg bg-transparent border-0 border-b-2 border-white appearance-none text-blue-200 dark:border-gray-600 dark:focus:border-blue-200 focus:outline-none focus:ring-0 focus:border-blue-200 peer" >
                     <option value="" selected disabled class="text-black">Residence</option>
                     <option value="hosteller" class="text-black">Hosteller</option>
                     <option value="day Scholar" class="text-black">Day Scholar</option>
@@ -145,8 +263,19 @@
                 </div>
             </div>
               <div class="px-4 pb-2 pt-4">
-                <button style="color: rgb(135, 178, 206);" class="submit uppercase block w-full p-4 text-sm rounded-md focus:outline-none h-16">
-                  Register
+                <button class="btn-53 submit uppercase block w-full p-4 text-sm rounded-md focus:outline-none h-16">
+                  <div class="original">Register</div>
+                  <div class="letters">
+                    
+                    <span>R</span>
+                    <span>E</span>
+                    <span>G</span>
+                    <span>I</span>
+                    <span>S</span>
+                    <span>T</span>
+                    <span>E</span>
+                    <span>R</span>
+                  </div>
                 </button>
               </div>
             </div>
