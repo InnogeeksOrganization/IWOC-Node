@@ -20,7 +20,7 @@
   }
 
   body {
-    height: 140vh;
+    height: 120vh;
     position: relative;
     /* width: 100%; */
     background-color: #111827;
@@ -34,7 +34,8 @@
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="../public/js/register.js"></script>
 
-  <div class="dialogCard" id="dialogCard" style="margin-top: 10%;">
+  <div class="dialogCard flex flex-col justify-center items-center rounded-lg" id="dialogCard" style="margin-top: 10%;">
+    <img src="../public/img/troubleshooting.png" width="500px" alt="">
     <div class="dialogTools">
       <div class="dialogCircle">
         <span class="dred dBox"></span>
@@ -46,7 +47,7 @@
         <span class="dgreen dBox"></span>
       </div>
     </div>
-    <div class="card__content" id="dContent">
+    <div class="card__content flex flex-col items-center" id="dContent">
       <h2><strong>🔴 We are doing some maintenance, be right back! 🔴</strong></h2>
       <p>Sorry for the inconvenience.</p>
     </div>

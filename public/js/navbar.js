@@ -1,4 +1,29 @@
+if(window.innerWidth>768){
+	window.addEventListener('scroll', function () {
+	var navLogo = document.querySelector('.nav-logo');
+	if (window.scrollY > 500) {
+	  navLogo.classList.remove("none") 
+	} else {
+	  navLogo.classList.add("none")
+	}
+});
+}
+else{
+	var navLogo = document.querySelector('.nav-logo');
+	navLogo.classList.remove("none") 
+}
 
+// window.onscroll = function() {scrollFunction()};
+
+// function scrollFunction() {
+//   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+//     document.getElementById("navbar").style.padding = "20px 10px";
+//     document.getElementById("nav-logo").style.fontSize = "25px";
+//   } else {
+//     document.getElementById("navbar").style.padding = "40px 10px";
+//     document.getElementById("nav-logo").style.fontSize = "35px";
+//   }
+// }
 (function($) { "use strict";
 
 	document.querySelector(function() {

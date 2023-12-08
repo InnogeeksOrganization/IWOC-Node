@@ -42,12 +42,16 @@
 }
 
 .abouttitle {
+    
     padding-bottom: 4%;
     padding-top: 2%;
     font-size: 2rem;
-
+    text-decoration: underline;
+    border-bottom: 3px solid white;
 }
-
+.about-iwoc{
+    color: #7B66FF;
+}
 .aboutnumber {
     font-size: 2.5rem;
     font-weight: normal;
@@ -86,7 +90,7 @@
 
 @media only screen and (min-width: 720px){
     .aboutimg{
-        width: 50vw;
+        width: 50vw;    
     }
 }
 
@@ -164,7 +168,8 @@
     height: auto;
     width: auto;
     position: absolute;
-    bottom: 1rem;
+    bottom: -1rem;
+    border-radius: 50%;
     left: -1rem;
 }
 
@@ -194,10 +199,11 @@
     }
 }
 
-.statsContainer {
+.box-container{
     position: relative;
-    font-family: sans-serif;
+
 }
+
 
 
 .statsContainer .statsBox {
@@ -250,3 +256,143 @@
     box-shadow: 0px 0px 20px 1px #ffbb763f;
     border: 1px solid rgba(255, 255, 255, 0.454);
 }
+
+.flip-card {
+    background-color: transparent;
+    width: 340px;
+    height: 340px;
+    perspective: 1000px;
+    color: white;
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+  }
+  
+  
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+  }
+  
+  .flip-card-front {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+    background-image:url('https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D') ;
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+  }
+  
+  .flip-card-back {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+    background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAVDD_D0mDmK0UyXIh-yz-REXxz-Fyo9edsmIUR6BHUo-WYcwVRLa0OHxu9Pr_utVPhuI&usqp=CAU');
+    transform: rotateY(180deg);
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+  }
+
+.about-cap-img{
+    position: absolute;
+    left: -180px;
+    top: -120px;
+    
+}
+
+@media only screen and (min-width: 370px){
+    .about-cap-img {
+        position: absolute;
+        left: -80px;
+        top: -80px;
+        transform: rotate(-10deg);
+    }
+}
+
+.cardContainer {
+    /* width: fit-content; */
+    
+    position: absolute;
+    bottom: -1rem;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-size: cover;
+    left: -1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+  
+  .project-card{
+      border: none;
+      position: relative;
+      overflow: hidden;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    backdrop-filter: blur(30px);
+    background-color: rgba(65, 65, 65, 0.308);
+    /* border: 1px solid rgba(255, 255, 255, 0.089); */
+    cursor: pointer;
+
+  }
+  
+  .city {
+    font-weight: 700;
+    font-size: 1.5em;
+    letter-spacing: 1.2px;
+    color: white;
+  }
+  
+  .weather {
+    font-weight: 500;
+    font-size: 1.1em;
+    letter-spacing: 1.2px;
+    color: rgb(197, 197, 197);
+  }
+  
+  .cardContainer::before {
+    width: 80px;
+    height: 80px;
+    content: "";
+    position: absolute;
+    background-color: rgb(144, 161, 255);
+    z-index: 0;
+    border-radius: 50%;
+    left: 80px;
+    top: 50px;
+    transition: all 1s;
+  }
+  
+  .cardContainer:hover::before {
+    transform: translate(-30px, 30px);
+  }
+  

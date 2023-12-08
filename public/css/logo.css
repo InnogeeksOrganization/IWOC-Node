@@ -1,3 +1,4 @@
+
 .mainlogo{
     width: 100%;
     margin-top: 25%;
@@ -14,9 +15,67 @@
     z-index: -1;
 }
 
+.card-cursor{
+    position: relative;
+}
+
+.fancy-border1{
+    height: 200px;
+    width: 200px;
+    border-radius: 30% 70% 57% 43% / 30% 30% 70% 70% ;
+    background-color: rgba(255, 255, 255, 0.132);
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    z-index: -10;
+    animation: change1 3s alternate 1s infinite ease-in-out;
+    transition: all ;
+}
+
+@keyframes change1 {
+    0%{
+       border-radius: 76% 24% 57% 43% / 30% 81% 19% 70% ;
+    }
+    100%{
+       border-radius: 27% 73% 95% 20% / 72% 31% 69% 28% ;
+       transform: translateX(-50px) translateY(50px);
+    }
+}
+@keyframes change2 {
+    0%{
+       border-radius: 50% 30% 20% 80% / 30% 81% 19% 70% ;
+    }
+    100%{
+        border-radius: 27% 73% 67% 33%  / 72% 31% 69% 28% ;
+        transform: translateX(-100px) translateY(100px);
+    }
+}
+
+.fancy-border2{
+    height: 339px;
+    width: 339px;
+    border-radius: 30% 70% 57% 43% / 30% 30% 70% 70% ;
+    background-color: rgba(255, 255, 255, 0.132);
+    position: absolute;
+    right: 10%;
+    z-index: -10;
+    top: 10%;
+    animation: change2 5s alternate 1s infinite ease-in-out;
+    transition: all ;
+}
+@media screen and (max-width:600px) {
+    .fancy-border1{
+        display: none;
+    }
+    .fancy-border2{
+    height: 200px;
+    width: 200px;
+    }
+}
 @media only screen and (min-width: 720px){
     .mainlogo{
         margin-top: 12%;
         width: 60%;
     }
+
 }

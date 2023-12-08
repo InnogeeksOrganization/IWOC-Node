@@ -1,0 +1,18 @@
+
+  .snowflake {
+    position: absolute;
+    background-image: url("../img/snowflakes-winter-sky-blue--16391.svg");
+    background-size: cover;
+    border-radius: 50px;
+    animation: fall 2s linear infinite;
+  }
+  @keyframes fall {
+    0% {
+      transform: translate(50%, 50%);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(50%, 1000%);
+      opacity: 0;
+    }
+  }
